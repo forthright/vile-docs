@@ -6,7 +6,7 @@
     "node": ">= 6.x.x"
   },
   "dependencies": {
-    "node-static": "^0.7.9",
-    "throng": "^4.0.0"
+    "node-static": "0.7.9",
+    "throng": "4.0.0"
   }
 }
