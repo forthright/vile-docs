@@ -1,0 +1,12 @@
+{
+  "name": "vile-docs",
+  "private": true,
+  "description": "Static hosting for vile api docs and tutorials",
+  "engines": {
+    "node": ">= 6.x.x"
+  },
+  "devDependencies": {
+    "node-static": "^0.7.9",
+    "throng": "^4.0.0"
+  }
+}
