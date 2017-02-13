@@ -1,0 +1,528 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@forthright/vile</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/override.css">
+</head>
+<body>
+<a id="github-fork-me" href="https://github.com/forthright/vile">
+	<img style="position: absolute; top: 0; right: 0; border: 0; z-index: 999;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+</a>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">Home</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li class="tsd-search-label-li">
+					<label id="tsd-search-label" for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+				</li>
+				<!--<li>-->
+				<!--<a href="globals.html">Modules</a>-->
+				<!--</li>-->
+			</ul>
+			<!--<h1>--><!-- --><!--@forthright/vile--><!----><!--</h1>-->
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="vile">Vile</h1>
+				<p>A punishing yet easy to use tool for writing insightful code.</p>
+				<p>It can be used to run all types of analysis and checks via one top level package.</p>
+				<h2 id="goal">Goal</h2>
+				<p>The goal of the project is not to compete with or replace existing
+					analysis tools, but to support them unobtrusively as possible,
+				and even complement them, while providing:</p>
+				<ul>
+					<li>A simple and robust API</li>
+					<li>A powerful plugin system</li>
+					<li>A unified data spec</li>
+				</ul>
+				<h2 id="requirements">Requirements</h2>
+				<ul>
+					<li><a href="http://nodejs.org">NodeJS</a></li>
+				</ul>
+				<h2 id="installation">Installation</h2>
+				<p>Since Vile&#39;s core is written in <a href="https://www.typescriptlang.org">TypeScript</a>,
+				the main project is distributed via <a href="http://npmjs.org">npm</a>.</p>
+				<p><strong>CLI</strong></p>
+				<p><em>install</em></p>
+				<pre><code>npm <span class="hljs-selector-tag">i</span> -g vile
+</code></pre><p><em>help</em></p>
+				<pre><code><span class="hljs-attribute">vile -h</span>
+</code></pre><p><em>fast setup</em></p>
+				<pre><code><span class="hljs-attribute">vile init</span>
+</code></pre><p><strong>API</strong></p>
+				<p><em>install</em></p>
+				<pre><code>npm <span class="hljs-selector-tag">i</span> vile
+</code></pre><p><em>use</em></p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> vile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"vile"</span>)
+
+vile
+  .exec()
+  .then(<span class="hljs-function">(<span class="hljs-params">issues</span>) =&gt;</span> { })
+</code></pre>
+				<p>See <a href="modules/_src_index_.html">src/index</a> for the full API.</p>
+				<h2 id="plugins">Plugins</h2>
+				<p>To actually punish your code, you need to install plugins first.</p>
+				<p>For a complete list of plugins, see <a href="https://vile.io/plugins">here</a>.</p>
+				<p>To get started, install a plugin package in your project root:</p>
+				<p><em>for example, install the <code>tslint</code> plugin</em></p>
+				<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> into_my_project
+npm install -D @forthright/vile @forthright/vile-tslint
+</code></pre>
+				<p><em>then run</em></p>
+				<pre><code class="lang-sh">vile punish
+</code></pre>
+				<p><em>or, more tersely</em></p>
+				<pre><code class="lang-sh">vile p
+</code></pre>
+				<p>Note: If you don&#39;t also have <code>vile</code> installed globally, you can access
+				the locally installed CLI via:</p>
+				<pre><code class="lang-sh">node node_modules/.bin/vile p
+</code></pre>
+				<p>Or, if you add <code>&quot;vile&quot;: &quot;vile&quot;</code> to your <code>package.json</code> scripts section, you can
+				run:</p>
+				<pre><code class="lang-sh">npm run <span class="hljs-_">-s</span> vile -- p
+</code></pre>
+				<p>After calling <code>vile p</code>, the CLI will look up any installed plugins and automatically
+				pull them in and run their checks.</p>
+				<p>You can also specify a white-list of installed plugins to only run:</p>
+				<pre><code class="lang-sh">vile p -p tslint,coffeelint
+</code></pre>
+				<h2 id="config-file">Config File</h2>
+				<p>A config file is named <code>.vile.yml</code> and should reside in your project root.</p>
+				<p><em>looks something like this</em></p>
+				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
+<span class="hljs-attr">  ignore:</span> [<span class="hljs-string">"custom ignore list"</span>]
+<span class="hljs-attr">  allow:</span> [<span class="hljs-string">"or a custom allow list"</span>]
+
+<span class="hljs-attr">some_plugin:</span>
+<span class="hljs-attr">  config:</span> plugin_config
+<span class="hljs-attr">  ignore:</span> plugin_ignore
+<span class="hljs-attr">  allow:</span> plugin_allow
+</code></pre>
+				<p>You can also specify a custom plugin list in your config:</p>
+				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
+<span class="hljs-attr">  plugins:</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">"tslint"</span>
+</code></pre>
+				<h3 id="ignore-lists">Ignore Lists</h3>
+				<p>The <code>vile.ignore</code> (and plugin specific) setting is a list of items to ignore.</p>
+				<p>If a plugin specifies its own <code>ignore</code> list, then it will be merged into
+				<code>vile.ignore</code> and passed to the respective plugin when it is run.</p>
+				<p>At the moment, each plugin is responsible for matching against
+				the provided ignore list.</p>
+				<p>However, you can use the <code>vile.ignored(&quot;path&quot;, ignore_list)</code> library
+				method to do the matching for you.</p>
+				<p>For reference, <a href="https://github.com/mafintosh/ignore-file">ignore-file</a> is currently used for matching.</p>
+				<h3 id="allow-lists">Allow Lists</h3>
+				<p>The <code>vile.allow</code> (and plugin specific) setting specifies paths to
+				<em>only</em> include.</p>
+				<p>It&#39;s util method is <code>vile.allowed(&quot;path&quot;, allow_list)</code>.</p>
+				<p>Note: Unlike ignore, certain levels will <strong>overwrite</strong> others, when set.</p>
+				<p>From highest to lowest precedence, they are:</p>
+				<ol>
+					<li>Specified via <code>vile p --gitdiff</code></li>
+					<li>Specified via <code>vile p file dir ...</code></li>
+					<li>Specified via <code>vile.allow</code></li>
+					<li>Specified via <code>my_plugin.allow</code></li>
+				</ol>
+				<p>So, say you call <code>vile p -g</code> it will ignore plugin/top
+				level allow lists, and any path arguments provided.</p>
+				<h3 id="combining-file-data">Combining File Data</h3>
+				<p>If you want to map a <code>src</code> build directory to a <code>lib</code> output directory:</p>
+				<pre><code class="lang-sh">vile p -x src:lib
+</code></pre>
+				<p>Or, in the case of this project&#39;s code:</p>
+				<pre><code class="lang-sh">vile p -x src.ts:lib.js
+</code></pre>
+				<h2 id="vile-io">vile.io</h2>
+				<p>If you like, you can publish and further analyze your
+				project on <a href="https://vile.io">vile.io</a>.</p>
+				<p><em>create a user account, then</em></p>
+				<pre><code class="lang-sh">vile auth
+</code></pre>
+				<p><em>then</em></p>
+				<pre><code class="lang-sh">vile p -u project_name
+</code></pre>
+				<h2 id="editor-integration">Editor Integration</h2>
+				<p>There are various text editors that have <code>vile</code> integrations.</p>
+				<h3 id="vim">Vim</h3>
+				<p>Via <a href="https://github.com/scrooloose/syntastic">syntastic</a>.</p>
+				<p>See <a href="https://github.com/forthright/syntastic">forthright/syntastic</a> for now.
+				Just replace the upstream install with the <code>master</code> branch.</p>
+				<p>Note: There is a lot of overlap with current syntax checkers that
+				do the same, and in many ways, faster, so be sure check them out too.</p>
+				<p>Current syntax checkers:</p>
+				<ul>
+					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/ruby/vile.vim">vile_rubycritic</a></li>
+					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/ruby/vile.vim">vile_rubocop</a></li>
+					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/ruby/vile.vim">vile_rails_best_practices</a></li>
+					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/sass/vile.vim">vile_sass_lint</a></li>
+					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/slim/vile.vim">vile_slim_lint</a></li>
+					<li><a href="">vile_eslint</a></li>
+					<li><a href="">vile_jshint</a></li>
+					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/haskell/vile.vim">vile_hlint</a></li>
+					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/coffee/vile.vim">vile_coffeelint</a></li>
+					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/typescript/vile.vim">vile_tslint</a></li>
+				</ul>
+				<p>An example config supporing <code>slim</code>, <code>ruby</code>, and <code>sass</code>, with
+				passive mode enabled:</p>
+				<pre><code class="lang-vim">  <span class="hljs-comment">" Command to toggle syntastic passive mode</span>
+  <span class="hljs-keyword">nnoremap</span> <span class="hljs-symbol">&lt;C-w&gt;</span><span class="hljs-keyword">e</span> :SyntasticCheck<span class="hljs-symbol">&lt;CR&gt;</span>
+  <span class="hljs-keyword">nnoremap</span> <span class="hljs-symbol">&lt;C-w&gt;</span>E :SyntasticReset<span class="hljs-symbol">&lt;CR&gt;</span>
+
+  <span class="hljs-comment">" Recommended statusline (see :help syntastic)</span>
+  <span class="hljs-keyword">set</span> statusline+=%#warningmsg#
+  <span class="hljs-keyword">set</span> statusline+=%{SyntasticStatuslineFlag()}
+  <span class="hljs-keyword">set</span> statusline+=%*
+
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_always_populate_loc_list</span> = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_auto_loc_list</span> = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_enable_signs</span> = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_aggregate_errors</span> = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_check_on_open</span> = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_auto_jump</span> = <span class="hljs-number">0</span>
+
+  <span class="hljs-comment">" Put into passive mode, and set desired checkers</span>
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_mode_map</span> = { <span class="hljs-string">"mode"</span>: <span class="hljs-string">"passive"</span> }
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_ruby_checkers</span>=[<span class="hljs-string">"mri"</span>, <span class="hljs-string">"vile_rubycritic"</span>, <span class="hljs-string">"vile_rubocop"</span>, <span class="hljs-string">"vile_rails_best_practices"</span>]
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_slim_checkers</span>=[<span class="hljs-string">"vile_slim_lint"</span>, <span class="hljs-string">"vile_rails_best_practices"</span>]
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_sass_checkers</span>=[<span class="hljs-string">"vile_sass_lint"</span>]
+</code></pre>
+				<h2 id="creating-a-plugin">Creating A Plugin</h2>
+				<p>A plugin should be prefixed with <code>vile-</code>, and
+					have a <code>commonjs</code> module that exports a <code>punish</code> method,
+					which should return an array of issues,
+				or a promise that resolves into one.</p>
+				<pre><code class="lang-javascript"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">punish</span>: <span class="hljs-function">(<span class="hljs-params">plugin_config</span>) =&gt;</span>
+    [issues] || a_promise_that_resolves_to_array_of_issues
+}
+</code></pre>
+				<p>You can also <a href="interfaces/_src__types_index_d_.vile.vile.html">require(&quot;vile&quot;)</a> in your plugin and use its
+				API, which provides some helpers.</p>
+				<p>See <a href="modules/_src__types_index_d_.vile.html">vile.Issue</a> for how Issues are structured.</p>
+				<h3 id="writing-non-javascript-plugins">Writing Non-JavaScript Plugins</h3>
+				<p>As long as you have a shim <code>index.js</code> file, you can use any lang to generate issue
+				data.</p>
+				<p>For now, <a href="interfaces/_src__types_index_d_.vile.lib.util.html#spawn">vile.spawn</a> is your best bet for running external commands.</p>
+				<p>For an example, see something like <a href="https://github.com/forthright/vile-hlint">vile-hlint</a>.</p>
+				<h3 id="writing-in-typescript">Writing In TypeScript</h3>
+				<p>Checkout <a href="https://github.com/forthright/vile-rubycritic">vile-rubycritic</a> for an example of how to pull in and use Vile&#39;s typings.</p>
+				<h3 id="filtering">Filtering</h3>
+				<p>Plugins are expected to support both the <code>ignore</code> and <code>allow</code> lists.
+				There are some helper methods to abstract away the onerous work.</p>
+				<p>For example: <code>vile.filter</code> is great for using with <code>vile.promise_each</code>, or in general.</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> vile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"vile"</span>)
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">punish</span>: <span class="hljs-function">(<span class="hljs-params">config</span>) =&gt;</span> {
+    <span class="hljs-keyword">let</span> filtered = vile.filter(config.ignore, config.allow)
+
+    <span class="hljs-keyword">return</span> get_some_filepaths_to_check()
+      .filter(<span class="hljs-function">(<span class="hljs-params">filepath</span>) =&gt;</span> filtered(filepath))
+      .each(determine_issues)
+  }
+}
+</code></pre>
+				<h3 id="windows-unix-paths">Windows/Unix Paths</h3>
+				<p>Plugins should stick to using unix style paths in issues and where
+					ever else. Library utilities such as ignore and allow attempt to auto convert
+				windows style paths, but not necessarily from things like config lists.</p>
+				<h3 id="files-without-issues">Files Without Issues</h3>
+				<p>Any files that are not ignored globally via <code>vile.ignore</code> and have no
+				issues are sent along with any reported issues.</p>
+				<p>You can disable this with the <code>--dontpostprocess</code> option. Currently,
+				this does not post process anything, including code snippets.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src__types_index_d_.html">"src/@types/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_.html">"src/cli"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_auth_.html">"src/cli/auth"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_init_.html">"src/cli/init"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_init_coverage_.html">"src/cli/init/coverage"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_init_framework_.html">"src/cli/init/framework"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_init_ignore_.html">"src/cli/init/ignore"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_init_language_.html">"src/cli/init/language"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_init_map_.html">"src/cli/init/map"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_init_post_.html">"src/cli/init/post"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_init_pre_.html">"src/cli/init/pre"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_punish_.html">"src/cli/punish"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_config_.html">"src/config"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_git_.html">"src/git"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_index_.html">"src/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_logger_.html">"src/logger"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_plugin_.html">"src/plugin"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_plugin_log_helper_.html">"src/plugin/log_<wbr>helper"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_plugin_worker_.html">"src/plugin/worker"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_service_.html">"src/service"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_util_.html">"src/util"</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_bluebird_index_d_.html">"node_<wbr>modules/@types/bluebird/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_commander_index_d_.html">"node_<wbr>modules/@types/commander/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_extend_index_d_.html">"node_<wbr>modules/@types/extend/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_form_data_index_d_.html">"node_<wbr>modules/@types/form-<wbr>data/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_inquirer_index_d_.html">"node_<wbr>modules/@types/inquirer/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_js_yaml_index_d_.html">"node_<wbr>modules/@types/js-<wbr>yaml/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_lodash_index_d_.html">"node_<wbr>modules/@types/lodash/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_minilog_index_d_.html">"node_<wbr>modules/@types/minilog/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_node_index_d_.html">"node_<wbr>modules/@types/node/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_request_index_d_.html">"node_<wbr>modules/@types/request/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_core_binding_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>core-<wbr>binding/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_core_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>core/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_aggregates_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>aggregates/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_async_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>async/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_backpressure_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>backpressure/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_coincidence_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>coincidence/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_experimental_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>experimental/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_joinpatterns_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>joinpatterns/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_testing_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>testing/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_time_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>time/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_virtualtime_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite-<wbr>virtualtime/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_lite_index_d_.html">"node_<wbr>modules/@types/rx-<wbr>lite/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_rx_index_d_.html">"node_<wbr>modules/@types/rx/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_through_index_d_.html">"node_<wbr>modules/@types/through/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_src__types_cli_spinner_index_d_.html">"src/@types/cli-<wbr>spinner/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_src__types_git_diff_tree_index_d_.html">"src/@types/git-<wbr>diff-<wbr>tree/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_src__types_ignore_file_index_d_.html">"src/@types/ignore-<wbr>file/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_src__types_language_detect_index_d_.html">"src/@types/language-<wbr>detect/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_src__types_linez_index_d_.html">"src/@types/linez/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_src__types_npm_run_path_index_d_.html">"src/@types/npm-<wbr>run-<wbr>path/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_src__types_unixify_index_d_.html">"src/@types/unixify/index.d"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
