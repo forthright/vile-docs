@@ -92,12 +92,22 @@
 				the main project is distributed via <a href="http://npmjs.org">npm</a>.</p>
 				<p><strong>CLI</strong></p>
 				<p><em>install</em></p>
-				<pre><code>npm <span class="hljs-selector-tag">i</span> -g vile
-</code></pre><p><em>help</em></p>
-				<pre><code><span class="hljs-attribute">vile -h</span>
-</code></pre><p><em>fast setup</em></p>
-				<pre><code><span class="hljs-attribute">vile init</span>
-</code></pre><p><strong>API</strong></p>
+				<pre><code class="lang-sh">npm i -g vile
+</code></pre>
+				<p><em>help</em></p>
+				<pre><code class="lang-sh">vile -h
+</code></pre>
+				<p><em>authenticate</em></p>
+				<pre><code class="lang-sh">vile auth
+</code></pre>
+				<p><em>fast setup</em></p>
+				<pre><code class="lang-sh">vile init
+</code></pre>
+				<p><em>upload</em></p>
+				<pre><code class="lang-sh"><span class="hljs-built_in">export</span> VILE_API_TOKEN=my-all-token
+vile p -si -u project_name
+</code></pre>
+				<p><strong>API</strong></p>
 				<p><em>install</em></p>
 				<pre><code>npm <span class="hljs-selector-tag">i</span> vile
 </code></pre><p><em>use</em></p>
@@ -182,8 +192,8 @@ npm install -D @forthright/vile @forthright/vile-tslint
 				<p>Or, in the case of this project&#39;s code:</p>
 				<pre><code class="lang-sh">vile p -x src.ts:lib.js
 </code></pre>
-				<h2 id="vile-io">vile.io</h2>
-				<p>If you like, you can publish and further analyze your
+				<h2 id="publishing">Publishing</h2>
+				<p>If you like, you can routinely publish and further analyze your
 				project on <a href="https://vile.io">vile.io</a>.</p>
 				<p><em>create a user account, then</em></p>
 				<pre><code class="lang-sh">vile auth
