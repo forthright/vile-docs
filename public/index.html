@@ -211,10 +211,10 @@ npm install -D @forthright/vile @forthright/vile-tslint
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"my_pkg"</span>,
   <span class="hljs-attr">"version"</span>: <span class="hljs-string">"x.x.x"</span>,
   <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"..."</span>,
     <span class="hljs-attr">"vile"</span>: <span class="hljs-string">"VILE_TOKEN=xxxxxx VILE_PROJECT=xxxxxx vile p -usi -n"</span>
   },
   <span class="hljs-attr">"devDependencies"</span>: {
-    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"..."</span>,
     <span class="hljs-attr">"vile"</span>: <span class="hljs-string">"^x.x.x"</span>
   }
 }
@@ -312,7 +312,7 @@ npm install -D @forthright/vile @forthright/vile-tslint
 <span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">vile</span>
 </code></pre>
 				<h3 id="codeship">Codeship</h3>
-				<p>If you run into issues reporting <code>churn</code> or generate <code>git</code> data, you may need to do this
+				<p>If you run into issues reporting <code>churn</code> or generating <code>git</code> data, you may need to do this
 				prior to analyzing:</p>
 				<pre><code>git checkout <span class="hljs-_">-f</span> <span class="hljs-variable">$CI_BRANCH</span>
 </code></pre><h2 id="editor-integration">Editor Integration</h2>
