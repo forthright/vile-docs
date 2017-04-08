@@ -75,11 +75,11 @@
 				<p><img src="https://cloud.githubusercontent.com/assets/93340/23980691/aba34a1a-09d7-11e7-85b2-12d1403b5686.png" alt="vile_full"></p>
 				<p>A punishing yet easy to use tool for writing insightful code.</p>
 				<h2 id="goal">Goal</h2>
-				<p>Vile can be used to run all types of analysis and checks
+				<p>Vile can be used to run all types of static analysis and other checks
 				via one top level package, and ultimately aims to provide:</p>
 				<ul>
 					<li>A simple and robust API</li>
-					<li>A powerful plugin system</li>
+					<li>An easy to use plugin system</li>
 					<li>Multi language/OS support</li>
 					<li>A unified data spec</li>
 				</ul>
@@ -103,9 +103,8 @@
 				<p><em>fast setup</em></p>
 				<pre><code class="lang-sh">vile init
 </code></pre>
-				<p><em>upload</em></p>
-				<pre><code class="lang-sh"><span class="hljs-built_in">export</span> VILE_API_TOKEN=my-all-token
-vile p -si -u project_name
+				<p><em>upload to vile.io</em></p>
+				<pre><code class="lang-sh">vile p -u
 </code></pre>
 				<p><strong>API</strong></p>
 				<p><em>install</em></p>
@@ -195,13 +194,15 @@ npm install -D @forthright/vile @forthright/vile-tslint
 				<pre><code class="lang-sh">vile p -x src.ts:lib.js
 </code></pre>
 				<h2 id="publishing">Publishing</h2>
-				<p>If you like, you can routinely publish and further analyze your
-				project on <a href="https://vile.io">vile.io</a>.</p>
+				<p>You can routinely publish and further analyze your project on <a href="https://vile.io">vile.io</a>.</p>
 				<p><em>create a user account, then</em></p>
 				<pre><code class="lang-sh">vile auth
 </code></pre>
 				<p><em>then</em></p>
-				<pre><code class="lang-sh">vile p -u project_name
+				<pre><code class="lang-sh">VILE_TOKEN=my-all-token VILE_PROJECT=project-name vile p -u
+</code></pre>
+				<p><em>to include code snippets and print scores</em></p>
+				<pre><code class="lang-sh">VILE_TOKEN=my-all-token VILE_PROJECT=project-name vile p -usi
 </code></pre>
 				<h2 id="ci-cd-examples">CI/CD Examples</h2>
 				<p>While you should be able to integrate vile into any
