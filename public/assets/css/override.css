@@ -105,10 +105,6 @@ img[alt="vile_full"] {
   text-decoration: none;
 }
 
-#tsd-docs-link::after {
-  content: '';
-}
-
 @media only screen and (max-width: 900px) {
   .tsd-search-label-li {
     display: none !important;
