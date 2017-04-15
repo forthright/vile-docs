@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>v0.12.3</title>
+	<title>v0.13.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -26,7 +26,7 @@
 						<li class="state failure">The search index is not available</li>
 					</ul>
 					<a href="index.html" class="title">
-						v0.12.3
+						v0.13.0
 					</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
@@ -67,7 +67,7 @@
 				<!--<a href="globals.html">Modules</a>-->
 				<!--</li>-->
 			</ul>
-			<!--<h1>--><!-- --><!--v0.12.3--><!----><!--</h1>-->
+			<!--<h1>--><!-- --><!--v0.13.0--><!----><!--</h1>-->
 		</div>
 	</div>
 </header>
@@ -78,8 +78,8 @@
 				<p><img src="https://cloud.githubusercontent.com/assets/93340/23980691/aba34a1a-09d7-11e7-85b2-12d1403b5686.png" alt="vile_full"></p>
 				<p>A punishing yet easy to use tool for writing insightful code.</p>
 				<h2 id="goal">Goal</h2>
-				<p>Vile can be used to run all types of static analysis and other checks
-				via one top level package, and ultimately aims to provide:</p>
+				<p>Vile can run all types of static analysis via
+				one top level package, and ultimately aims to provide:</p>
 				<ul>
 					<li>A simple and robust API</li>
 					<li>An easy to use plugin system</li>
@@ -126,7 +126,7 @@ vile
 				<p>To get started, install a plugin package in your project root:</p>
 				<p><em>for example, install the <code>tslint</code> plugin</em></p>
 				<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> into_my_project
-npm install -D @forthright/vile @forthright/vile-tslint
+npm install -D vile vile-tslint
 </code></pre>
 				<p><em>then run</em></p>
 				<pre><code class="lang-sh">vile punish
@@ -216,14 +216,15 @@ npm install -D @forthright/vile @forthright/vile-tslint
   <span class="hljs-attr">"version"</span>: <span class="hljs-string">"x.x.x"</span>,
   <span class="hljs-attr">"scripts"</span>: {
     <span class="hljs-attr">"test"</span>: <span class="hljs-string">"..."</span>,
-    <span class="hljs-attr">"vile"</span>: <span class="hljs-string">"VILE_TOKEN=xxxxxx VILE_PROJECT=xxxxxx vile p -usi -n"</span>
+    <span class="hljs-attr">"vile"</span>: <span class="hljs-string">"vile p -usi -n"</span>
   },
   <span class="hljs-attr">"devDependencies"</span>: {
     <span class="hljs-attr">"vile"</span>: <span class="hljs-string">"^x.x.x"</span>
   }
 }
 </code></pre>
-				<h3 id="circle">Circle</h3>
+				<p><em>Also, don&#39;t forget to set <code>VILE_TOKEN</code> and <code>VILE_PROJECT</code> on your build server!</em></p>
+				<h3 id="circleci">CircleCI</h3>
 				<p>Example config:</p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">machine:</span>
 <span class="hljs-attr">  node:</span>
@@ -241,7 +242,7 @@ npm install -D @forthright/vile @forthright/vile-tslint
 <span class="hljs-attr">  post:</span>
 <span class="hljs-bullet">    -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">vile</span>
 </code></pre>
-				<h3 id="appveyor">Appveyor</h3>
+				<h3 id="appveyor">AppVeyor</h3>
 				<p>Example config:</p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">cache:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">node_modules</span> <span class="hljs-bullet">-&gt;</span> <span class="hljs-string">package.json</span>
@@ -276,7 +277,7 @@ npm install -D @forthright/vile @forthright/vile-tslint
 <span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">test</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">vile</span>
 </code></pre>
-				<h3 id="travis">Travis</h3>
+				<h3 id="travisci">TravisCI</h3>
 				<p>Example config:</p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">os:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">osx</span>
