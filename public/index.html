@@ -77,22 +77,11 @@
 			<div class="tsd-panel tsd-typography">
 				<p><img src="https://cloud.githubusercontent.com/assets/93340/23980691/aba34a1a-09d7-11e7-85b2-12d1403b5686.png" alt="vile_full"></p>
 				<p>A punishing yet easy to use tool for writing insightful code.</p>
-				<h2 id="goal">Goal</h2>
-				<p>Vile can run all types of static analysis via
-				one top level package, and ultimately aims to provide:</p>
-				<ul>
-					<li>A simple and robust API</li>
-					<li>An easy to use plugin system</li>
-					<li>Multi language/OS support</li>
-					<li>A unified data spec</li>
-				</ul>
 				<h2 id="requirements">Requirements</h2>
 				<ul>
 					<li><a href="http://nodejs.org">NodeJS</a></li>
 				</ul>
-				<h2 id="installation">Installation</h2>
-				<p>Since Vile&#39;s core is written in <a href="https://www.typescriptlang.org">TypeScript</a>,
-				the main project is distributed via <a href="http://npmjs.org">npm</a>.</p>
+				<h2 id="installation-usage">Installation &amp; Usage</h2>
 				<p><strong>CLI</strong></p>
 				<p><em>install</em></p>
 				<pre><code class="lang-sh">npm i -g vile
@@ -103,12 +92,13 @@
 				<p><em>authenticate</em></p>
 				<pre><code class="lang-sh">vile auth
 </code></pre>
-				<p><em>fast setup</em></p>
+				<p><em>setup</em></p>
 				<pre><code class="lang-sh">vile init
 </code></pre>
-				<p><em>upload to vile.io</em></p>
+				<p><em>analyze</em></p>
 				<pre><code class="lang-sh">vile p -u
 </code></pre>
+				<p>See <a href="#analyzing-your-project">analyzing your project</a> for more details.</p>
 				<p><strong>API</strong></p>
 				<p><em>install</em></p>
 				<pre><code>npm <span class="hljs-selector-tag">i</span> vile
@@ -196,74 +186,64 @@ npm install -D vile vile-tslint
 				<p>Or, in the case of this project&#39;s code:</p>
 				<pre><code class="lang-sh">vile p -x src.ts:lib.js
 </code></pre>
-				<h2 id="publishing">Publishing</h2>
-				<p>You can routinely publish and further analyze your project on <a href="https://vile.io">vile.io</a>.</p>
-				<p><em>create a user account, then</em></p>
-				<pre><code class="lang-sh">vile auth
+				<h2 id="analyzing-your-project">Analyzing Your Project</h2>
+				<ol>
+					<li><p>Make an account on <a href="https://vile.io">vile.io</a>.</p>
+					</li>
+					<li><p>Create a <a href="https://vile.io/new_project">new project</a>.</p>
+					</li>
+					<li><p>Grab an <a href="https://vile.io/auth_tokens">API token</a>.</p>
+					</li>
+					<li><p>Upload your first commit:</p>
+					</li>
+				</ol>
+				<pre><code class="lang-sh"><span class="hljs-built_in">export</span> VILE_TOKEN=my-all-token
+<span class="hljs-built_in">export</span> VILE_PROJECT=my-project-name
+
+vile p -u
 </code></pre>
-				<p><em>then</em></p>
-				<pre><code class="lang-sh">VILE_TOKEN=my-all-token VILE_PROJECT=project-name vile p -u
+				<p>You can also include code snippets and print detailed commit stats:</p>
+				<pre><code class="lang-sh">vile p -usi
 </code></pre>
-				<p><em>to include code snippets and print scores</em></p>
-				<pre><code class="lang-sh">VILE_TOKEN=my-all-token VILE_PROJECT=project-name vile p -usi
-</code></pre>
-				<h2 id="ci-cd-examples">CI/CD Examples</h2>
+				<h3 id="ci-cd-examples">CI/CD Examples</h3>
 				<p>While you should be able to integrate vile into any
 				CI/CD process, here are some mainstream config examples.</p>
-				<p>As a base, consider a <code>package.json</code> like this:</p>
-				<pre><code class="lang-json">{
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"my_pkg"</span>,
-  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"x.x.x"</span>,
-  <span class="hljs-attr">"scripts"</span>: {
-    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"..."</span>,
-    <span class="hljs-attr">"vile"</span>: <span class="hljs-string">"vile p -usi -n"</span>
-  },
-  <span class="hljs-attr">"devDependencies"</span>: {
-    <span class="hljs-attr">"vile"</span>: <span class="hljs-string">"^x.x.x"</span>
-  }
-}
-</code></pre>
-				<p><em>Also, don&#39;t forget to set <code>VILE_TOKEN</code> and <code>VILE_PROJECT</code> on your build server!</em></p>
+				<p><em>Note: don&#39;t forget to set <code>VILE_TOKEN</code> and <code>VILE_PROJECT</code> on your build server!</em></p>
 				<h3 id="circleci">CircleCI</h3>
-				<p>Example config:</p>
+				<p>Example <code>circle.yml</code>:</p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">machine:</span>
 <span class="hljs-attr">  node:</span>
 <span class="hljs-attr">    version:</span> <span class="hljs-number">6.10</span><span class="hljs-number">.1</span>
 
-<span class="hljs-comment"># https://github.com/forthright/vile-git#cicd-issues</span>
+<span class="hljs-comment"># see: https://github.com/forthright/vile-git#cicd-issues</span>
 <span class="hljs-attr">checkout:</span>
 <span class="hljs-attr">  post:</span>
 <span class="hljs-bullet">    -</span> <span class="hljs-string">"[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"</span>
 <span class="hljs-bullet">    -</span> <span class="hljs-string">git</span> <span class="hljs-string">checkout</span> <span class="hljs-bullet">-f</span> <span class="hljs-string">$CIRCLE_BRANCH</span>
 
 <span class="hljs-attr">test:</span>
-<span class="hljs-attr">  override:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">test</span>
 <span class="hljs-attr">  post:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">vile</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">vile</span> <span class="hljs-string">p</span> <span class="hljs-bullet">-usi</span> <span class="hljs-bullet">-n</span>
 </code></pre>
 				<h3 id="appveyor">AppVeyor</h3>
-				<p>Example config:</p>
+				<p>Example <code>appveyor.yml</code>:</p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">cache:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">node_modules</span> <span class="hljs-bullet">-&gt;</span> <span class="hljs-string">package.json</span>
 
 <span class="hljs-attr">environment:</span>
 <span class="hljs-attr">  matrix:</span>
 <span class="hljs-attr">    - nodejs_version:</span> <span class="hljs-number">6</span>
-<span class="hljs-attr">      npm_version:</span> <span class="hljs-number">3.</span><span class="hljs-string">x.x</span>
-<span class="hljs-attr">    - nodejs_version:</span> <span class="hljs-number">6</span>
 <span class="hljs-attr">      npm_version:</span> <span class="hljs-number">4.</span><span class="hljs-string">x.x</span>
 
 <span class="hljs-attr">platform:</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">x86</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">x64</span>
 
 <span class="hljs-comment"># if you are using unix style line endings</span>
 <span class="hljs-attr">init:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-bullet">--global</span> <span class="hljs-string">core.autocrlf</span> <span class="hljs-string">input</span>
 
-<span class="hljs-attr">skip_tags:</span> <span class="hljs-literal">true</span>
-
-<span class="hljs-comment"># note: might need higher value for better churn calculation</span>
+<span class="hljs-comment"># might need higher value for better churn calculation</span>
 <span class="hljs-attr">clone_depth:</span> <span class="hljs-number">10</span>
 
 <span class="hljs-attr">build:</span> <span class="hljs-string">off</span>
@@ -274,60 +254,49 @@ npm install -D vile vile-tslint
 <span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span>
 
 <span class="hljs-attr">test_script:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">test</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">vile</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-comment"># run tests here</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">vile</span> <span class="hljs-string">p</span> <span class="hljs-bullet">-usi</span> <span class="hljs-bullet">-n</span>
 </code></pre>
 				<h3 id="travisci">TravisCI</h3>
-				<p>Example config:</p>
+				<p>Example <code>.travis.yml</code>:</p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">os:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">osx</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">linux</span>
 
-<span class="hljs-attr">sudo:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
+
+<span class="hljs-attr">node_js:</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">"6"</span>
 
 <span class="hljs-attr">cache:</span>
 <span class="hljs-attr">  directories:</span>
 <span class="hljs-bullet">    -</span> <span class="hljs-string">node_modules</span>
 
 <span class="hljs-attr">env:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">NODE_VER=6</span> <span class="hljs-string">NPM_VER=3.x.x</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">NODE_VER=6</span> <span class="hljs-string">NPM_VER=4.x.x</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">NPM_VER=4.x.x</span>
 
-<span class="hljs-comment"># need to install nvm is on osx (does not ship with currently?)</span>
 <span class="hljs-attr">before_install:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">if</span> <span class="hljs-string">[[</span> <span class="hljs-string">"$TRAVIS_OS_NAME"</span> <span class="hljs-string">==</span> <span class="hljs-string">"osx"</span> <span class="hljs-string">]];</span> <span class="hljs-string">then</span> <span class="hljs-string">brew</span> <span class="hljs-string">update;</span> <span class="hljs-string">fi</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">if</span> <span class="hljs-string">[[</span> <span class="hljs-string">"$TRAVIS_OS_NAME"</span> <span class="hljs-string">==</span> <span class="hljs-string">"osx"</span> <span class="hljs-string">]];</span> <span class="hljs-string">then</span> <span class="hljs-string">brew</span> <span class="hljs-string">install</span> <span class="hljs-string">nvm;</span> <span class="hljs-string">fi</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">if</span> <span class="hljs-string">[[</span> <span class="hljs-string">"$TRAVIS_OS_NAME"</span> <span class="hljs-string">==</span> <span class="hljs-string">"osx"</span> <span class="hljs-string">]];</span> <span class="hljs-string">then</span> <span class="hljs-string">source</span> <span class="hljs-string">$(brew</span> <span class="hljs-bullet">--prefix</span> <span class="hljs-string">nvm)/nvm.sh;</span> <span class="hljs-string">fi</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">nvm</span> <span class="hljs-string">install</span> <span class="hljs-string">$NODE_VER</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">if</span> <span class="hljs-string">[[</span> <span class="hljs-string">"$TRAVIS_OS_NAME"</span> <span class="hljs-string">==</span> <span class="hljs-string">"osx"</span> <span class="hljs-string">]];</span> <span class="hljs-string">then</span> <span class="hljs-string">nvm</span> <span class="hljs-string">use</span> <span class="hljs-bullet">--delete-prefix</span> <span class="hljs-string">v$NODE_VER;</span> <span class="hljs-string">fi</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">npm@$NPM_VER</span>
 
-<span class="hljs-attr">install:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span>
-
-<span class="hljs-comment"># note: might need higher value for better churn calculation</span>
 <span class="hljs-attr">git:</span>
 <span class="hljs-attr">  depth:</span> <span class="hljs-number">10</span>
 
-<span class="hljs-attr">before_script:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">echo</span> <span class="hljs-string">""</span>
-
 <span class="hljs-attr">script:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">test</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-bullet">-s</span> <span class="hljs-string">vile</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-comment"># run tests here</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">vile</span> <span class="hljs-string">p</span> <span class="hljs-bullet">-usi</span> <span class="hljs-bullet">-n</span>
 </code></pre>
 				<h3 id="codeship">Codeship</h3>
 				<p>If you run into issues reporting <code>churn</code> or generating <code>git</code> data, you may need to do this
 				prior to analyzing:</p>
 				<pre><code>git checkout <span class="hljs-_">-f</span> <span class="hljs-variable">$CI_BRANCH</span>
 </code></pre><h2 id="editor-integration">Editor Integration</h2>
-				<p>There are various text editors that have <code>vile</code> integrations.</p>
+				<p>You <em>should</em> be able to integrate vile into any text editor (ex: via the <code>-f synastic</code> flag).</p>
 				<h3 id="vim">Vim</h3>
 				<p>Via <a href="https://github.com/scrooloose/syntastic">syntastic</a>.</p>
 				<p>See <a href="https://github.com/forthright/syntastic">forthright/syntastic</a> for now.
 				Just replace the upstream install with the <code>master</code> branch.</p>
 				<p>Note: There is a lot of overlap with current syntax checkers that
-				do the same, and in many ways, faster, so be sure check them out too.</p>
+					already exist. For the most part they are faster (ex: hlint),
+				so check those out first.</p>
 				<p>Current syntax checkers:</p>
 				<ul>
 					<li><a href="https://github.com/forthright/syntastic/blob/master/syntax_checkers/ruby/vile.vim">vile_rubycritic</a></li>
