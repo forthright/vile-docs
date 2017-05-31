@@ -3,7 +3,7 @@
   "private": true,
   "description": "Static hosting for vile api docs and tutorials",
   "engines": {
-    "node": ">= 6.x.x"
+    "node": "8.x.x"
   },
   "dependencies": {
     "node-static": "0.7.9",
