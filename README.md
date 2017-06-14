@@ -6,7 +6,7 @@ API Documentation and Tutorials for vile.
 
     git clone git@github.com:forthright/vile-docs.git
     cd vile-docs
-    yarn install
+    npm i
 
 ## Run
 
