@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>v0.16.3</title>
+	<title>v0.17.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -26,7 +26,7 @@
 						<li class="state failure">The search index is not available</li>
 					</ul>
 					<a href="../../../../.." class="title">
-						v0.16.3
+						v0.17.0
 					</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
@@ -67,7 +67,7 @@
 				<!--<a href="globals.html">Modules</a>-->
 				<!--</li>-->
 			</ul>
-			<!--<h1>--><!-- --><!--v0.16.3--><!----><!--</h1>-->
+			<!--<h1>--><!-- --><!--v0.17.0--><!----><!--</h1>-->
 		</div>
 	</div>
 </header>
@@ -92,26 +92,30 @@
 				<p><em>authenticate</em></p>
 				<pre><code class="lang-sh">vile auth
 </code></pre>
-				<p><em>setup</em></p>
+				<p><em>configure</em></p>
 				<pre><code class="lang-sh">vile init
 </code></pre>
 				<p><em>analyze</em></p>
-				<pre><code class="lang-sh">vile p -u
+				<pre><code class="lang-sh">vile analyze -u
 </code></pre>
 				<p>See <a href="#analyzing-your-project">analyzing your project</a> for more details.</p>
 				<p><strong>API</strong></p>
 				<p><em>install</em></p>
 				<pre><code>npm <span class="hljs-selector-tag">i</span> vile
-</code></pre><p><em>use</em></p>
+</code></pre><p><em>example</em></p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> vile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"vile"</span>)
 
+vile.logger.disable()
+
 vile
-  .exec()
-  .then(<span class="hljs-function">(<span class="hljs-params">issues</span>) =&gt;</span> { })
+  .exec(vile.config.load())
+  .then(<span class="hljs-function">(<span class="hljs-params">issues : vile.IssueList</span>) =&gt;</span> {
+    <span class="hljs-comment">// ...</span>
+  })
 </code></pre>
 				<p>See <a href="modules/_src_index_.html">src/index</a> for the full API.</p>
 				<h2 id="plugins">Plugins</h2>
-				<p>To actually punish your code, you need to install plugins first.</p>
+				<p>To actually analyze your code, you need to install plugins first.</p>
 				<p>For a complete list of plugins, see <a href="https://vile.io/plugins">here</a>.</p>
 				<p>To get started, install a plugin package in your project root:</p>
 				<p><em>for example, install the <code>tslint</code> plugin</em></p>
@@ -119,23 +123,23 @@ vile
 npm install -D vile vile-tslint
 </code></pre>
 				<p><em>then run</em></p>
-				<pre><code class="lang-sh">vile punish
+				<pre><code class="lang-sh">vile analyze
 </code></pre>
 				<p><em>or, more tersely</em></p>
-				<pre><code class="lang-sh">vile p
+				<pre><code class="lang-sh">vile a
 </code></pre>
 				<p>Note: If you don&#39;t also have <code>vile</code> installed globally, you can access
 				the locally installed CLI via:</p>
-				<pre><code class="lang-sh">node node_modules/.bin/vile p
+				<pre><code class="lang-sh">node node_modules/.bin/vile a
 </code></pre>
 				<p>Or, if you add <code>&quot;vile&quot;: &quot;vile&quot;</code> to your <code>package.json</code> scripts section, you can
 				run:</p>
-				<pre><code class="lang-sh">npm run -s vile -- p
+				<pre><code class="lang-sh">npm run <span class="hljs-_">-s</span> vile -- p
 </code></pre>
-				<p>After calling <code>vile p</code>, the CLI will look up any installed plugins and automatically
+				<p>After calling <code>vile a</code>, the CLI will look up any installed plugins and automatically
 				pull them in and run their checks.</p>
 				<p>You can also specify a white-list of installed plugins to only run:</p>
-				<pre><code class="lang-sh">vile p -p tslint,coffeelint
+				<pre><code class="lang-sh">vile a -p tslint,coffeelint
 </code></pre>
 				<h2 id="config-file">Config File</h2>
 				<p>A config file is named <code>.vile.yml</code> and should reside in your project root.</p>
@@ -172,19 +176,19 @@ npm install -D vile vile-tslint
 				<p>Note: Unlike ignore, certain levels will <strong>overwrite</strong> others, when set.</p>
 				<p>From highest to lowest precedence, they are:</p>
 				<ol>
-					<li>Specified via <code>vile p --gitdiff</code></li>
-					<li>Specified via <code>vile p file dir ...</code></li>
+					<li>Specified via <code>vile a --gitdiff</code></li>
+					<li>Specified via <code>vile a file dir ...</code></li>
 					<li>Specified via <code>vile.allow</code></li>
 					<li>Specified via <code>my_plugin.allow</code></li>
 				</ol>
-				<p>So, say you call <code>vile p -g</code> it will ignore plugin/top
+				<p>So, say you call <code>vile a -g</code> it will ignore plugin/top
 				level allow lists, and any path arguments provided.</p>
 				<h3 id="combining-file-data">Combining File Data</h3>
 				<p>If you want to map a <code>src</code> build directory to a <code>lib</code> output directory:</p>
-				<pre><code class="lang-sh">vile p -x src:lib
+				<pre><code class="lang-sh">vile a -x src:lib
 </code></pre>
 				<p>Or, in the case of this project&#39;s code:</p>
-				<pre><code class="lang-sh">vile p -x src.ts:lib.js
+				<pre><code class="lang-sh">vile a -x src.ts:lib.js
 </code></pre>
 				<h2 id="analyzing-your-project">Analyzing Your Project</h2>
 				<ol>
@@ -200,10 +204,10 @@ npm install -D vile vile-tslint
 				<pre><code class="lang-sh"><span class="hljs-built_in">export</span> VILE_TOKEN=my-all-token
 <span class="hljs-built_in">export</span> VILE_PROJECT=my-project-name
 
-vile p -u
+vile a -u
 </code></pre>
 				<p>To disable code snippet generation:</p>
-				<pre><code class="lang-sh">vile p -us
+				<pre><code class="lang-sh">vile a -us
 </code></pre>
 				<h3 id="ci-cd-examples">CI/CD Examples</h3>
 				<p>While you should be able to integrate vile into any
@@ -223,7 +227,7 @@ vile p -u
 
 <span class="hljs-attr">test:</span>
 <span class="hljs-attr">  post:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">vile</span> <span class="hljs-string">p</span> <span class="hljs-bullet">-u</span> <span class="hljs-bullet">-n</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">vile</span> <span class="hljs-string">a</span> <span class="hljs-bullet">-u</span> <span class="hljs-bullet">-n</span>
 </code></pre>
 				<h3 id="appveyor">AppVeyor</h3>
 				<p>Example <code>appveyor.yml</code>:</p>
@@ -255,7 +259,7 @@ vile p -u
 
 <span class="hljs-attr">test_script:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-comment"># run tests here</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">vile</span> <span class="hljs-string">p</span> <span class="hljs-bullet">-u</span> <span class="hljs-bullet">-n</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">vile</span> <span class="hljs-string">a</span> <span class="hljs-bullet">-u</span> <span class="hljs-bullet">-n</span>
 </code></pre>
 				<h3 id="travisci">TravisCI</h3>
 				<p>Example <code>.travis.yml</code>:</p>
@@ -282,14 +286,14 @@ vile p -u
 
 <span class="hljs-attr">script:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-comment"># run tests here</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">vile</span> <span class="hljs-string">p</span> <span class="hljs-bullet">-u</span> <span class="hljs-bullet">-n</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">vile</span> <span class="hljs-string">a</span> <span class="hljs-bullet">-u</span> <span class="hljs-bullet">-n</span>
 </code></pre>
 				<h3 id="codeship">Codeship</h3>
 				<p>If you run into issues reporting <code>churn</code> or generating <code>git</code> data, you may need to do this
 				prior to analyzing:</p>
-				<pre><code><span class="hljs-attribute">git</span> checkout -f <span class="hljs-variable">$CI_BRANCH</span>
+				<pre><code>git checkout <span class="hljs-_">-f</span> <span class="hljs-variable">$CI_BRANCH</span>
 </code></pre><h2 id="editor-integration">Editor Integration</h2>
-				<p>You <em>should</em> be able to integrate vile into any text editor (ex: via the <code>-f synastic</code> flag).</p>
+				<p>You <em>should</em> be able to integrate vile into any text editor (ex: via the <code>-f syntastic</code> flag).</p>
 				<h3 id="vim">Vim</h3>
 				<p>Via <a href="https://github.com/scrooloose/syntastic">syntastic</a>.</p>
 				<p>See <a href="https://github.com/forthright/syntastic">forthright/syntastic</a> for now.
@@ -398,6 +402,18 @@ vile p -u
 						<a href="modules/_src_cli_.html">"src/cli"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_analyze_.html">"src/cli/analyze"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_analyze_commit_upload_error_.html">"src/cli/analyze/commit_<wbr>upload_<wbr>error"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_analyze_log_helper_.html">"src/cli/analyze/log_<wbr>helper"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_cli_analyze_upload_.html">"src/cli/analyze/upload"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_src_cli_auth_.html">"src/cli/auth"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -428,10 +444,10 @@ vile p -u
 						<a href="modules/_src_cli_init_pre_.html">"src/cli/init/pre"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_cli_punish_.html">"src/cli/punish"</a>
+						<a href="modules/_src_config_.html">"src/config"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_config_.html">"src/config"</a>
+						<a href="modules/_src_config_config_parse_error_.html">"src/config/config_<wbr>parse_<wbr>error"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_src_git_.html">"src/git"</a>
@@ -446,7 +462,7 @@ vile p -u
 						<a href="modules/_src_plugin_.html">"src/plugin"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_plugin_log_helper_.html">"src/plugin/log_<wbr>helper"</a>
+						<a href="modules/_src_plugin_plugin_not_found_error_.html">"src/plugin/plugin_<wbr>not_<wbr>found_<wbr>error"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_src_plugin_worker_.html">"src/plugin/worker"</a>
@@ -462,6 +478,9 @@ vile p -u
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_bluebird_index_d_.html">"node_<wbr>modules/@types/bluebird/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_chalk_index_d_.html">"node_<wbr>modules/@types/chalk/index.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_commander_index_d_.html">"node_<wbr>modules/@types/commander/index.d"</a>
@@ -482,13 +501,16 @@ vile p -u
 						<a href="modules/_node_modules__types_lodash_index_d_.html">"node_<wbr>modules/@types/lodash/index.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules__types_minilog_index_d_.html">"node_<wbr>modules/@types/minilog/index.d"</a>
+						<a href="modules/_node_modules__types_loglevel_index_d_.html">"node_<wbr>modules/@types/loglevel/index.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_node_index_d_.html">"node_<wbr>modules/@types/node/index.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_opn_index_d_.html">"node_<wbr>modules/@types/opn/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_ora_index_d_.html">"node_<wbr>modules/@types/ora/index.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_request_index_d_.html">"node_<wbr>modules/@types/request/index.d"</a>
@@ -542,10 +564,13 @@ vile p -u
 						<a href="modules/_node_modules_linez_dist_linez_d_.html">"node_<wbr>modules/linez/dist/linez.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_src__types_cli_spinner_index_d_.html">"src/@types/cli-<wbr>spinner/index.d"</a>
+						<a href="modules/_src__types_cross_spawn_index_d_.html">"src/@types/cross-<wbr>spawn/index.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_src__types_cross_spawn_index_d_.html">"src/@types/cross-<wbr>spawn/index.d"</a>
+						<a href="modules/_src__types_emphasize_index_d_.html">"src/@types/emphasize/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_src__types_error_ex_index_d_.html">"src/@types/error-<wbr>ex/index.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_src__types_git_diff_tree_index_d_.html">"src/@types/git-<wbr>diff-<wbr>tree/index.d"</a>

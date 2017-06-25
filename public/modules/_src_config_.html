@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/config&quot; | v0.16.3</title>
+	<title>&quot;src/config&quot; | v0.17.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -26,7 +26,7 @@
 						<li class="state failure">The search index is not available</li>
 					</ul>
 					<a href="../../../../../.." class="title">
-						v0.16.3
+						v0.17.0
 					</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
@@ -84,6 +84,7 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_config_.html#default_vile_yml" class="tsd-kind-icon">DEFAULT_<wbr>VILE_<wbr>YML</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_config_.html#conf" class="tsd-kind-icon">conf</a></li>
 							</ul>
 						</section>
@@ -92,7 +93,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_config_.html#get_conf" class="tsd-kind-icon">get_<wbr>conf</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_config_.html#load_auth_config_from_env" class="tsd-kind-icon">load_<wbr>auth_<wbr>config_<wbr>from_<wbr>env</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_config_.html#load_config_from_file" class="tsd-kind-icon">load_<wbr>config_<wbr>from_<wbr>file</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_config_.html#load_config" class="tsd-kind-icon">load_<wbr>config</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,12 +102,22 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="default_vile_yml" class="tsd-anchor"></a>
+					<h3>DEFAULT_<wbr>VILE_<wbr>YML</h3>
+					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>VILE_<wbr>YML<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">".vile.yml"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;.vile.yml&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/4c56d1b/src/config.ts#L5">src/config.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="conf" class="tsd-anchor"></a>
 					<h3>conf</h3>
 					<div class="tsd-signature tsd-kind-icon">conf<span class="tsd-signature-symbol">:</span> <a href="_src__types_index_d_.vile.html#ymlconfig" class="tsd-signature-type">YMLConfig</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/forthright/vile/blob/838582d/src/config.ts#L4">src/config.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/4c56d1b/src/config.ts#L7">src/config.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -123,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/838582d/src/config.ts#L25">src/config.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/4c56d1b/src/config.ts#L33">src/config.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -140,7 +151,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/838582d/src/config.ts#L17">src/config.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/4c56d1b/src/config.ts#L25">src/config.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_src__types_index_d_.vile.auth.html" class="tsd-signature-type">Auth</a></h4>
@@ -148,22 +159,22 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="load_config_from_file" class="tsd-anchor"></a>
-					<h3>load_<wbr>config_<wbr>from_<wbr>file</h3>
+					<a name="load_config" class="tsd-anchor"></a>
+					<h3>load_<wbr>config</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">load_<wbr>config_<wbr>from_<wbr>file<span class="tsd-signature-symbol">(</span>filepath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src__types_index_d_.vile.html#ymlconfig" class="tsd-signature-type">YMLConfig</a></li>
+						<li class="tsd-signature tsd-kind-icon">load_<wbr>config<span class="tsd-signature-symbol">(</span>filepath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src__types_index_d_.vile.html#ymlconfig" class="tsd-signature-type">YMLConfig</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/838582d/src/config.ts#L6">src/config.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/4c56d1b/src/config.ts#L9">src/config.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>filepath: <span class="tsd-signature-type">string</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> filepath: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;DEFAULT_VILE_YML</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_src__types_index_d_.vile.html#ymlconfig" class="tsd-signature-type">YMLConfig</a></h4>
@@ -186,6 +197,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_src_config_.html#default_vile_yml" class="tsd-kind-icon">DEFAULT_<wbr>VILE_<wbr>YML</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_config_.html#conf" class="tsd-kind-icon">conf</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
@@ -195,7 +209,7 @@
 						<a href="_src_config_.html#load_auth_config_from_env" class="tsd-kind-icon">load_<wbr>auth_<wbr>config_<wbr>from_<wbr>env</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_src_config_.html#load_config_from_file" class="tsd-kind-icon">load_<wbr>config_<wbr>from_<wbr>file</a>
+						<a href="_src_config_.html#load_config" class="tsd-kind-icon">load_<wbr>config</a>
 					</li>
 				</ul>
 			</nav>
