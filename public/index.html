@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>v0.18.2</title>
+	<title>v0.18.3</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -26,7 +26,7 @@
 						<li class="state failure">The search index is not available</li>
 					</ul>
 					<a href="../../../../.." class="title">
-						v0.18.2
+						v0.18.3
 					</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
@@ -67,7 +67,7 @@
 				<!--<a href="globals.html">Modules</a>-->
 				<!--</li>-->
 			</ul>
-			<!--<h1>--><!-- --><!--v0.18.2--><!----><!--</h1>-->
+			<!--<h1>--><!-- --><!--v0.18.3--><!----><!--</h1>-->
 		</div>
 	</div>
 </header>
@@ -79,7 +79,7 @@
 				<p>A punishing yet easy to use tool for writing insightful code.</p>
 				<h2 id="requirements">Requirements</h2>
 				<ul>
-					<li><a href="http://nodejs.org">NodeJS</a></li>
+					<li><a href="http://nodejs.org">Node.js</a></li>
 				</ul>
 				<h2 id="installation-usage">Installation &amp; Usage</h2>
 				<p><strong>CLI</strong></p>
@@ -115,40 +115,26 @@ vile
 </code></pre>
 				<p>See <a href="modules/_src_index_.html">src/index</a> for the full API.</p>
 				<h2 id="plugins">Plugins</h2>
-				<p>To actually analyze your code, you need to install plugins first.</p>
+				<p>To analyze your code, you need to install plugins first.</p>
 				<p>For a complete list of plugins, see <a href="https://vile.io/plugins">here</a>.</p>
-				<p>To get started, install a plugin package in your project root:</p>
-				<p><em>for example, install the <code>tslint</code> plugin</em></p>
-				<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> into_my_project
-npm install -D vile vile-tslint
+				<p>For example, for your everyday Node.js project:</p>
+				<pre><code class="lang-sh">npm i -D vile vile-ncu vile-synt vile-coverage vile-stat vile-git vile-escomplex vile-eslint
 </code></pre>
-				<p><em>then run</em></p>
+				<p><em>then run:</em></p>
 				<pre><code class="lang-sh">vile analyze
 </code></pre>
-				<p><em>or, more tersely</em></p>
-				<pre><code class="lang-sh">vile a
-</code></pre>
-				<p>Note: If you don&#39;t also have <code>vile</code> installed globally, you can access
-				the locally installed CLI via:</p>
-				<pre><code class="lang-sh">node node_modules/.bin/vile a
-</code></pre>
-				<p>Or, if you add <code>&quot;vile&quot;: &quot;vile&quot;</code> to your <code>package.json</code> scripts section, you can
-				run:</p>
-				<pre><code class="lang-sh">npm run <span class="hljs-_">-s</span> vile -- p
-</code></pre>
-				<p>After calling <code>vile a</code>, the CLI will look up any installed plugins and automatically
+				<p>The CLI will look up any installed plugins and automatically
 				pull them in and run their checks.</p>
-				<p>You can also specify a white-list of installed plugins to only run:</p>
-				<pre><code class="lang-sh">vile a -p tslint,coffeelint
-</code></pre>
+				<p>Note: If you don&#39;t also have <code>vile</code> installed globally, you can easily
+				access the locally installed CLI using something like <a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">npx</a>.</p>
 				<h2 id="config-file">Config File</h2>
 				<p>A config file is named <code>.vile.yml</code> and should reside in your project root.</p>
 				<p><em>looks something like this</em></p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
 <span class="hljs-attr">  ignore:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">"custom ignore list"</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">foo/bar</span>
 <span class="hljs-attr">  allow:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">"or a custom allow list"</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">baz</span>
 
 <span class="hljs-attr">some_plugin:</span>
 <span class="hljs-attr">  config:</span> <span class="hljs-string">plugin_config</span>
@@ -349,7 +335,7 @@ vile a -u
     [issues] || a_promise_that_resolves_to_array_of_issues
 }
 </code></pre>
-				<p>You can also <a href="interfaces/_src__types_index_d_.vile.vile.html">require(&quot;vile&quot;)</a> in your plugin and use its
+				<p>You can also <a href="https://docs.vile.io/interfaces/_src__types_index_d_.vile.module.index.html">require(&quot;vile&quot;)</a> in your plugin and use its
 				API, which provides some helpers.</p>
 				<p>See <a href="https://docs.vile.io/interfaces/_src__types_index_d_.vile.issue.html">vile.Issue</a> for how Issues are structured.</p>
 				<h3 id="writing-non-javascript-plugins">Writing Non-JavaScript Plugins</h3>
@@ -382,8 +368,7 @@ vile a -u
 				<h3 id="files-without-issues">Files Without Issues</h3>
 				<p>Any files that are not ignored globally via <code>vile.ignore</code> and have no
 				issues are sent along with any reported issues.</p>
-				<p>You can disable this with the <code>--dontpostprocess</code> option. Currently,
-				this does not post process anything, including code snippets.</p>
+				<p>Currently, you can disable this with the <code>--dont-post-process</code> option.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
