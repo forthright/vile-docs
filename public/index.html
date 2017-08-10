@@ -224,13 +224,13 @@ vile analyze -u
 </code></pre>
 				<h3 id="ruby">Ruby</h3>
 				<p>A basic Ruby project example (using <a href="http://bundler.io">Bundler</a>):</p>
-				<pre><code class="lang-sh">    npm i -D vile vile-git vile-rubycritic vile-rubocop vile-sass-lint vile-bundler-audit vile-bundler-outdated
+				<pre><code class="lang-sh">npm i -D vile vile-git vile-rubycritic vile-rubocop vile-sass-lint vile-bundler-audit vile-bundler-outdated
 
-    <span class="hljs-comment"># you can also add these to your Gemfile</span>
-    gem install rubocop rubycritic bundler bundler-audit
+<span class="hljs-comment"># you can also add these to your Gemfile</span>
+gem install rubocop rubycritic bundler bundler-audit
 
-    <span class="hljs-comment"># depending on your setup, you may need to use `bundle exec`</span>
-    bundle <span class="hljs-built_in">exec</span> vile analyze
+<span class="hljs-comment"># depending on your setup, you may need to use `bundle exec`</span>
+bundle <span class="hljs-built_in">exec</span> vile analyze
 </code></pre>
 				<p>Note: Some plugins don&#39;t support Vile&#39;s allow/ignore out of the box.</p>
 				<p>For example, <a href="https://github.com/forthright/vile-rubycritic">vile-rubycritic</a> requires
