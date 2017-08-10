@@ -224,7 +224,7 @@ vile analyze -u
 </code></pre>
 				<h3 id="ruby">Ruby</h3>
 				<p>A basic Ruby project example (using <a href="http://bundler.io">Bundler</a>):</p>
-				<pre><code class="lang-sh">    npm i -D vile vile-git vile-sass-lint vile-bundler-audit vile-bundler-outdated
+				<pre><code class="lang-sh">    npm i -D vile vile-git vile-rubycritic vile-rubocop vile-sass-lint vile-bundler-audit vile-bundler-outdated
 
     <span class="hljs-comment"># you can also add these to your Gemfile</span>
     gem install rubocop rubycritic bundler bundler-audit
@@ -235,12 +235,14 @@ vile analyze -u
 				<p>Note: Some plugins don&#39;t support Vile&#39;s allow/ignore out of the box.</p>
 				<p>For example, <a href="https://github.com/forthright/vile-rubycritic">vile-rubycritic</a> requires
 				you set specific <code>allow</code> paths to avoid traversing <code>node_modules</code>.</p>
+				<p>The same goes for <a href="https://github.com/forthright/vile-rubocop#ignoring-files">vile-rubocop</a>.</p>
 				<h3 id="rails">Rails</h3>
 				<p>For an in depth article about using Rails + Vile checkout <a href="https://medium.com/forthright/continuous-analysis-for-your-rails-project-using-vile-and-circleci-4fb077378ab6">Continuous Analysis For Your Rails Project Using Vile and CircleCI</a>.</p>
 				<h3 id="haskell">Haskell</h3>
 				<p>Depending on your setup and if you are using sandboxes, you may need to use <code>cabal exec</code>:</p>
-				<pre><code>cabal exec <span class="hljs-comment">-- vile analyze</span>
-</code></pre><h2 id="config">Config</h2>
+				<pre><code class="lang-sh">cabal <span class="hljs-built_in">exec</span> -- vile analyze
+</code></pre>
+				<h2 id="config">Config</h2>
 				<p>You can easily configure Vile and it&#39;s plugins via a <code>.vile.yml</code> file.</p>
 				<p>The file should reside in your project root and look something like this:</p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
@@ -280,14 +282,16 @@ vile analyze -u
 				<p>So, say you call <code>vile a -g</code> it will ignore plugin/top
 				level allow lists, and any path arguments provided.</p>
 				<h2 id="getting-new-releases">Getting New Releases</h2>
-				<pre><code>cd my_project_src/
-npx npm-<span class="hljs-keyword">check</span>-updates -u
-npm <span class="hljs-keyword">install</span>
-git <span class="hljs-keyword">commit</span> package.json -m <span class="hljs-string">"Updated some vile packages."</span>
-</code></pre><p>For a global install:</p>
-				<pre><code>npx <span class="hljs-built_in">npm</span>-check-updates -g -f vile
-<span class="hljs-built_in">npm</span> install -g vile
-</code></pre><h2 id="editor-integration">Editor Integration</h2>
+				<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> my_project_src/
+npx npm-check-updates -u
+npm install
+git commit package.json -m <span class="hljs-string">"Updated some vile packages."</span>
+</code></pre>
+				<p>For a global install:</p>
+				<pre><code class="lang-sh">npx npm-check-updates -g -f vile
+npm install -g vile
+</code></pre>
+				<h2 id="editor-integration">Editor Integration</h2>
 				<p>You <em>should</em> be able to integrate vile into any text editor (ex: via the <code>-f syntastic</code> flag).</p>
 				<h3 id="vim">Vim</h3>
 				<p>Via <a href="https://github.com/scrooloose/syntastic">syntastic</a>.</p>
