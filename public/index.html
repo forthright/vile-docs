@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>v0.18.3</title>
+	<title>v0.19.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -26,7 +26,7 @@
 						<li class="state failure">The search index is not available</li>
 					</ul>
 					<a href="../../../../.." class="title">
-						v0.18.3
+						v0.19.0
 					</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
@@ -67,7 +67,7 @@
 				<!--<a href="globals.html">Modules</a>-->
 				<!--</li>-->
 			</ul>
-			<!--<h1>--><!-- --><!--v0.18.3--><!----><!--</h1>-->
+			<!--<h1>--><!-- --><!--v0.19.0--><!----><!--</h1>-->
 		</div>
 	</div>
 </header>
@@ -81,108 +81,20 @@
 				<ul>
 					<li><a href="http://nodejs.org">Node.js</a></li>
 				</ul>
-				<h2 id="installation-usage">Installation &amp; Usage</h2>
-				<p><strong>CLI</strong></p>
-				<p><em>install</em></p>
-				<pre><code class="lang-sh">npm i -g vile
-</code></pre>
-				<p><em>help</em></p>
-				<pre><code class="lang-sh">vile -h
-</code></pre>
-				<p><em>authenticate</em></p>
-				<pre><code class="lang-sh">vile auth
-</code></pre>
-				<p><em>configure</em></p>
-				<pre><code class="lang-sh">vile init
-</code></pre>
-				<p><em>analyze</em></p>
-				<pre><code class="lang-sh">vile analyze -u
-</code></pre>
-				<p>See <a href="#analyzing-your-project">analyzing your project</a> for more details.</p>
-				<p><strong>API</strong></p>
-				<p><em>install</em></p>
-				<pre><code>npm <span class="hljs-selector-tag">i</span> vile
-</code></pre><p><em>example</em></p>
-				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> vile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"vile"</span>)
-
-vile.logger.disable()
-
-vile
-  .exec(vile.config.load())
-  .then(<span class="hljs-function">(<span class="hljs-params">issues : vile.IssueList</span>) =&gt;</span> {
-    <span class="hljs-comment">// ...</span>
-  })
-</code></pre>
-				<p>See <a href="modules/_src_index_.html">src/index</a> for the full API.</p>
-				<h2 id="plugins">Plugins</h2>
-				<p>To analyze your code, you need to install plugins first.</p>
-				<p>For a complete list of plugins, see <a href="https://vile.io/plugins">here</a>.</p>
-				<p>For example, for your everyday Node.js project:</p>
-				<pre><code class="lang-sh">npm i -D vile vile-ncu vile-synt vile-coverage vile-stat vile-git vile-escomplex vile-eslint
-</code></pre>
-				<p><em>then run:</em></p>
-				<pre><code class="lang-sh">vile analyze
-</code></pre>
-				<p>The CLI will look up any installed plugins and automatically
-				pull them in and run their checks.</p>
-				<p>Note: If you don&#39;t also have <code>vile</code> installed globally, you can easily
+				<h2 id="installation">Installation</h2>
+				<pre><code>npm <span class="hljs-selector-tag">i</span> -g vile
+</code></pre><h2 id="configuration">Configuration</h2>
+				<pre><code><span class="hljs-built_in">cd</span> my_project_src/
+vile init
+</code></pre><p>Note: If you don&#39;t like installing vile&#39;s CLI globally, you can easily
 				access the locally installed CLI using something like <a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">npx</a>.</p>
-				<h2 id="config-file">Config File</h2>
-				<p>A config file is named <code>.vile.yml</code> and should reside in your project root.</p>
-				<p><em>looks something like this</em></p>
-				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
-<span class="hljs-attr">  ignore:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">foo/bar</span>
-<span class="hljs-attr">  allow:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">baz</span>
-
-<span class="hljs-attr">some_plugin:</span>
-<span class="hljs-attr">  config:</span> <span class="hljs-string">plugin_config</span>
-<span class="hljs-attr">  ignore:</span> <span class="hljs-string">plugin_ignore</span>
-<span class="hljs-attr">  allow:</span> <span class="hljs-string">plugin_allow</span>
-</code></pre>
-				<p>You can also specify a custom plugin list in your config:</p>
-				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
-<span class="hljs-attr">  plugins:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">"tslint"</span>
-</code></pre>
-				<h3 id="ignore-lists">Ignore Lists</h3>
-				<p>The <code>vile.ignore</code> (and plugin specific) setting is a list of items to ignore.</p>
-				<p>If a plugin specifies its own <code>ignore</code> list, then it will be merged into
-				<code>vile.ignore</code> and passed to the respective plugin when it is run.</p>
-				<p>At the moment, each plugin is responsible for matching against
-				the provided ignore list.</p>
-				<p>However, you can use the <code>vile.ignored(&quot;path&quot;, ignore_list)</code> library
-				method to do the matching for you.</p>
-				<p>For reference, <a href="https://www.npmjs.com/package/ignore">node-ignore</a> is currently used for matching.</p>
-				<h3 id="allow-lists">Allow Lists</h3>
-				<p>The <code>vile.allow</code> (and plugin specific) setting specifies paths to
-				<em>only</em> include.</p>
-				<p>It&#39;s util method is <code>vile.allowed(&quot;path&quot;, allow_list)</code>.</p>
-				<p>Note: Unlike ignore, certain levels will <strong>overwrite</strong> others, when set.</p>
-				<p>From highest to lowest precedence, they are:</p>
-				<ol>
-					<li>Specified via <code>vile a --gitdiff</code></li>
-					<li>Specified via <code>vile a file dir ...</code></li>
-					<li>Specified via <code>vile.allow</code></li>
-					<li>Specified via <code>my_plugin.allow</code></li>
-				</ol>
-				<p>So, say you call <code>vile a -g</code> it will ignore plugin/top
-				level allow lists, and any path arguments provided.</p>
-				<h3 id="combining-file-data">Combining File Data</h3>
-				<p>If you want to map a <code>src</code> build directory to a <code>lib</code> output directory:</p>
-				<pre><code class="lang-sh">vile a -x src:lib
-</code></pre>
-				<p>Or, in the case of this project&#39;s code:</p>
-				<pre><code class="lang-sh">vile a -x src.ts:lib.js
-</code></pre>
 				<h2 id="analyzing-your-project">Analyzing Your Project</h2>
 				<ol>
 					<li><p>Make an account on <a href="https://vile.io">vile.io</a>.</p>
 					</li>
-					<li><p>Create a <a href="https://vile.io/new_project">new project</a>.</p>
+					<li><p>Create a <a href="https://vile.io/new_project">New Project</a>.</p>
 					</li>
-					<li><p>Grab an <a href="https://vile.io/auth_tokens">API token</a>.</p>
+					<li><p>Grab an <a href="https://vile.io/auth_tokens">API Token</a>.</p>
 					</li>
 					<li><p>Upload your first commit:</p>
 					</li>
@@ -190,14 +102,12 @@ vile
 				<pre><code class="lang-sh"><span class="hljs-built_in">export</span> VILE_TOKEN=my-all-token
 <span class="hljs-built_in">export</span> VILE_PROJECT=my-project-name
 
-vile a -u
+vile analyze -u
 </code></pre>
-				<p>To disable code snippet generation:</p>
-				<pre><code class="lang-sh">vile a -us
-</code></pre>
-				<h3 id="ci-cd-examples">CI/CD Examples</h3>
-				<p>While you should be able to integrate vile into any
-				CI/CD process, here are some mainstream config examples.</p>
+				<h2 id="setting-up-continuous-analysis">Setting Up Continuous Analysis</h2>
+				<p>Vile is most helpful when you integrate it into your CI/CD process
+				and run it right after your build and test steps.</p>
+				<p>See below for some popular examples.</p>
 				<p><em>Note: don&#39;t forget to set <code>VILE_TOKEN</code> and <code>VILE_PROJECT</code> on your build server!</em></p>
 				<h3 id="circleci">CircleCI</h3>
 				<p>Example <code>circle.yml</code>:</p>
@@ -277,7 +187,106 @@ vile a -u
 				<h3 id="codeship">Codeship</h3>
 				<p>If you run into issues reporting <code>churn</code> or generating <code>git</code> data, you may need to do this
 				prior to analyzing:</p>
-				<pre><code>git checkout <span class="hljs-_">-f</span> <span class="hljs-variable">$CI_BRANCH</span>
+				<pre><code><span class="hljs-attribute">git</span> checkout -f <span class="hljs-variable">$CI_BRANCH</span>
+</code></pre><h2 id="language-support">Language Support</h2>
+				<p>Vile itself comes with a general set of plugins that support basic multi language analysis.</p>
+				<p>To analyze your code further, such as tracking outdated RubyGems, plugging in
+					your favourite linter, tracking code complexity, or checking for vulnerabilities,
+				you need to install extra plugins first.</p>
+				<p>While there is a full list of plugins available <a href="https://vile.io/plugins">here</a>, please
+				see below for tips and known caveats for various languages and frameworks.</p>
+				<h3 id="javascript">JavaScript</h3>
+				<p>For an everyday JavaScript (or Node.js) project:</p>
+				<pre><code>npm <span class="hljs-selector-tag">i</span> -D vile vile-synt vile-git vile-escomplex vile-nsp
+</code></pre><h3 id="flow">Flow</h3>
+				<p>There is currently limited support for Flow using non-core plugins.
+				Some plugins may work, and others (that specifically parse JS) may fail.</p>
+				<p>For example <a href="https://github.com/forthright/vile-synt">vile-synt</a> currently does not work (<a href="https://github.com/brentlintner/synt/issues/99">yet</a>).</p>
+				<h3 id="jsx">JSX</h3>
+				<p>Just like Flow there is limited support.</p>
+				<p>A good workaround is to ignore all <code>.jsx</code> files
+				and also any <code>.js</code> files with JSX code in them.</p>
+				<p>For example, with a plugin like <a href="https://github.com/forthright/vile-escomplex">vile-escomplex</a>:</p>
+				<pre><code class="lang-yaml"><span class="hljs-attr">escomplex:</span>
+<span class="hljs-attr">  ignore:</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">"*.jsx"</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">path/to/jsx</span>
+</code></pre>
+				<h3 id="non-standard-js">Non-Standard JS</h3>
+				<p>If you are using EMCAScript Stage-3 and below proposals,
+				some plugins might not work out of the box or just yet.</p>
+				<p>A good workaround is to map <code>lib</code> data to <code>src</code> using the CLI&#39;s
+				<code>-x src:lib</code> option, while also ignoring <code>src</code> for the specific plugins:</p>
+				<pre><code class="lang-yaml"><span class="hljs-attr">synt:</span>
+<span class="hljs-attr">  ignore:</span> <span class="hljs-string">src</span>
+<span class="hljs-attr">escomplex:</span>
+<span class="hljs-attr">  ignore:</span> <span class="hljs-string">src</span>
+</code></pre>
+				<h3 id="ruby">Ruby</h3>
+				<p>A basic Ruby project example (using <a href="http://bundler.io">Bundler</a>):</p>
+				<pre><code class="lang-sh">    npm i -D vile vile-git vile-sass-lint vile-bundler-audit vile-bundler-outdated
+
+    <span class="hljs-comment"># you can also add these to your Gemfile</span>
+    gem install rubocop rubycritic bundler bundler-audit
+
+    <span class="hljs-comment"># depending on your setup, you may need to use `bundle exec`</span>
+    bundle <span class="hljs-built_in">exec</span> vile analyze
+</code></pre>
+				<p>Note: Some plugins don&#39;t support Vile&#39;s allow/ignore out of the box.</p>
+				<p>For example, <a href="https://github.com/forthright/vile-rubycritic">vile-rubycritic</a> requires
+				you set specific <code>allow</code> paths to avoid traversing <code>node_modules</code>.</p>
+				<h3 id="rails">Rails</h3>
+				<p>For an in depth article about using Rails + Vile checkout <a href="https://medium.com/forthright/continuous-analysis-for-your-rails-project-using-vile-and-circleci-4fb077378ab6">Continuous Analysis For Your Rails Project Using Vile and CircleCI</a>.</p>
+				<h3 id="haskell">Haskell</h3>
+				<p>Depending on your setup and if you are using sandboxes, you may need to use <code>cabal exec</code>:</p>
+				<pre><code>cabal exec <span class="hljs-comment">-- vile analyze</span>
+</code></pre><h2 id="config">Config</h2>
+				<p>You can easily configure Vile and it&#39;s plugins via a <code>.vile.yml</code> file.</p>
+				<p>The file should reside in your project root and look something like this:</p>
+				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
+<span class="hljs-attr">  ignore:</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">foo/bar</span>
+<span class="hljs-attr">  allow:</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">baz</span>
+
+<span class="hljs-attr">some_plugin:</span>
+<span class="hljs-attr">  config:</span>
+<span class="hljs-attr">    some_opt:</span> <span class="hljs-string">"some val"</span>
+<span class="hljs-attr">  ignore:</span> <span class="hljs-string">plugin_specific_ignore</span>
+<span class="hljs-attr">  allow:</span> <span class="hljs-string">plugin_specific_allow</span>
+</code></pre>
+				<p>You can also specify a custom plugin list in your config:</p>
+				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
+<span class="hljs-attr">  plugins:</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">"tslint"</span>
+</code></pre>
+				<h3 id="ignore-lists">Ignore Lists</h3>
+				<p>Vile already ignores known directories and paths
+				for you, such as <code>node_modules</code>, <code>coverage</code>, etc.</p>
+				<p>Setting <code>vile.ignore</code> in your config will ignore paths/files globally.</p>
+				<p>If <code>plugin_name.ignore</code> is set, then it will be merged into
+				<code>vile.ignore</code> and passed to the respective plugin when it is run.</p>
+				<h3 id="allow-lists">Allow Lists</h3>
+				<p>The <code>vile.allow</code> (and plugin specific) setting specifies paths to
+				<em>only</em> include.</p>
+				<p>Note: Unlike ignore, certain levels will <strong>overwrite</strong> others, when set.</p>
+				<p>From highest to lowest precedence, they are:</p>
+				<ol>
+					<li>Specified via <code>vile a --gitdiff</code></li>
+					<li>Specified via <code>vile a file dir ...</code></li>
+					<li>Specified via <code>vile.allow</code></li>
+					<li>Specified via <code>my_plugin.allow</code></li>
+				</ol>
+				<p>So, say you call <code>vile a -g</code> it will ignore plugin/top
+				level allow lists, and any path arguments provided.</p>
+				<h2 id="getting-new-releases">Getting New Releases</h2>
+				<pre><code>cd my_project_src/
+npx npm-<span class="hljs-keyword">check</span>-updates -u
+npm <span class="hljs-keyword">install</span>
+git <span class="hljs-keyword">commit</span> package.json -m <span class="hljs-string">"Updated some vile packages."</span>
+</code></pre><p>For a global install:</p>
+				<pre><code>npx <span class="hljs-built_in">npm</span>-check-updates -g -f vile
+<span class="hljs-built_in">npm</span> install -g vile
 </code></pre><h2 id="editor-integration">Editor Integration</h2>
 				<p>You <em>should</em> be able to integrate vile into any text editor (ex: via the <code>-f syntastic</code> flag).</p>
 				<h3 id="vim">Vim</h3>
@@ -324,6 +333,21 @@ vile a -u
   <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_slim_checkers</span>=[<span class="hljs-string">"vile_slim_lint"</span>, <span class="hljs-string">"vile_rails_best_practices"</span>]
   <span class="hljs-keyword">let</span> <span class="hljs-variable">g:syntastic_sass_checkers</span>=[<span class="hljs-string">"vile_sass_lint"</span>]
 </code></pre>
+				<h2 id="library-integration">Library Integration</h2>
+				<p><em>install:</em></p>
+				<pre><code>npm <span class="hljs-selector-tag">i</span> vile
+</code></pre><p><em>analyze:</em></p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> vile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"vile"</span>)
+
+vile.logger.disable()
+
+vile
+  .exec(vile.config.load())
+  .then(<span class="hljs-function">(<span class="hljs-params">issues : vile.IssueList</span>) =&gt;</span> {
+    <span class="hljs-comment">// ...</span>
+  })
+</code></pre>
+				<p>See <a href="modules/_src_index_.html">src/index</a> for the full API.</p>
 				<h2 id="creating-a-plugin">Creating A Plugin</h2>
 				<p>A plugin itself should be an <a href="https://docs.npmjs.com/getting-started/creating-node-modules">npm package</a> prefixed
 					with <code>vile-</code>, and have a <a href="https://docs.npmjs.com/files/package.json#main">main module</a> that
@@ -346,8 +370,16 @@ vile a -u
 				<h3 id="writing-in-typescript">Writing In TypeScript</h3>
 				<p>Checkout <a href="https://github.com/forthright/vile-rubycritic">vile-rubycritic</a> for an example of how to pull in and use Vile&#39;s typings.</p>
 				<h3 id="filtering">Filtering</h3>
-				<p>Plugins are expected to support both the <code>ignore</code> and <code>allow</code> lists.
-				There are some helper methods to abstract away the onerous work.</p>
+				<p>At the moment, each plugin is expected to support
+				both the <code>ignore</code> and <code>allow</code> lists (if applicable).</p>
+				<h4 id="ignore-lists">Ignore Lists</h4>
+				<p>You can use the <code>vile.ignored(&quot;path&quot;, ignore_list)</code> library
+				method help with matching.</p>
+				<p>For reference, <a href="https://www.npmjs.com/package/ignore">node-ignore</a> is currently used for matching.</p>
+				<h4 id="allow-lists">Allow Lists</h4>
+				<p>Similarily, you can use <code>vile.allowed(&quot;path&quot;, allow_list)</code>.</p>
+				<h4 id="helpers">Helpers</h4>
+				<p>There are also some helper methods to abstract away some onerous work.</p>
 				<p>For example: <code>vile.filter</code> is great for using with <code>vile.promise_each</code>, or in general.</p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> vile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"vile"</span>)
 
@@ -408,9 +440,6 @@ vile a -u
 						<a href="modules/_src_cli_init_.html">"src/cli/init"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_cli_init_coverage_.html">"src/cli/init/coverage"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
 						<a href="modules/_src_cli_init_framework_.html">"src/cli/init/framework"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -469,9 +498,6 @@ vile a -u
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_commander_index_d_.html">"node_<wbr>modules/@types/commander/index.d"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules__types_extend_index_d_.html">"node_<wbr>modules/@types/extend/index.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_form_data_index_d_.html">"node_<wbr>modules/@types/form-<wbr>data/index.d"</a>

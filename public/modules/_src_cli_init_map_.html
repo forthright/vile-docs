@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/cli/init/map&quot; | v0.18.3</title>
+	<title>&quot;src/cli/init/map&quot; | v0.19.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -26,7 +26,7 @@
 						<li class="state failure">The search index is not available</li>
 					</ul>
 					<a href="../../../../../.." class="title">
-						v0.18.3
+						v0.19.0
 					</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
@@ -81,6 +81,12 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_cli_init_map_.html#default_ignore_dirs" class="tsd-kind-icon">DEFAULT_<wbr>IGNORE_<wbr>DIRS</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Object literals</h3>
 							<ul class="tsd-index-list">
@@ -93,6 +99,19 @@
 					</div>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="default_ignore_dirs" class="tsd-anchor"></a>
+					<h3>DEFAULT_<wbr>IGNORE_<wbr>DIRS</h3>
+					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>IGNORE_<wbr>DIRS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;app/assets/images&quot;,&quot;app/assets/videos&quot;,&quot;bin&quot;,&quot;bower_components&quot;,&quot;.bundle&quot;,&quot;cabal.sandbox.config&quot;,&quot;.cabal-sandbox&quot;,&quot;coverage&quot;,&quot;db&quot;,&quot;doc&quot;,&quot;dist&quot;,&quot;.git&quot;,&quot;.gitmodules&quot;,&quot;.gitattributes&quot;,&quot;log&quot;,&quot;node_modules&quot;,&quot;.nyc_output&quot;,&quot;tmp&quot;,&quot;tags&quot;,&quot;vendor&quot;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L43">src/cli/init/map.ts:43</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Object literals</h2>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
@@ -101,7 +120,7 @@
 					<div class="tsd-signature tsd-kind-icon">PLUGIN_<wbr>MAP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L48">src/cli/init/map.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L66">src/cli/init/map.ts:66</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -110,7 +129,7 @@
 						<div class="tsd-signature tsd-kind-icon">frameworks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L49">src/cli/init/map.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L67">src/cli/init/map.ts:67</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -127,12 +146,6 @@
 								</li>
 								<li class="tsd-parameter">
 									<h5>coffeelint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>core<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>coverage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li class="tsd-parameter">
 									<h5>editorconfig<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
@@ -164,8 +177,21 @@
 								<li class="tsd-parameter">
 									<h5>slim_<wbr>lint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
+								<li class="tsd-parameter">
+									<h5>tslint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
 							</ul>
 						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="plugin_map.ignore" class="tsd-anchor"></a>
+						<h3>ignore</h3>
+						<div class="tsd-signature tsd-kind-icon">ignore<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;DEFAULT_IGNORE_DIRS</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L68">src/cli/init/map.ts:68</a></li>
+							</ul>
+						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="plugin_map.langs" class="tsd-anchor"></a>
@@ -173,23 +199,14 @@
 						<div class="tsd-signature tsd-kind-icon">langs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L50">src/cli/init/map.ts:50</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L69">src/cli/init/map.ts:69</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
 							<h4>Type declaration</h4>
 							<ul class="tsd-parameters">
 								<li class="tsd-parameter">
-									<h5>coffeescript<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li class="tsd-parameter">
 									<h5>haskell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>javascript<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>php<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li class="tsd-parameter">
 									<h5>ruby<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
@@ -203,9 +220,6 @@
 								<li class="tsd-parameter">
 									<h5>slim<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
-								<li class="tsd-parameter">
-									<h5>typescript<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
 							</ul>
 						</div>
 					</section>
@@ -215,7 +229,7 @@
 						<div class="tsd-signature tsd-kind-icon">peer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L51">src/cli/init/map.ts:51</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L70">src/cli/init/map.ts:70</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -254,14 +268,6 @@
 									</ul>
 								</li>
 								<li class="tsd-parameter">
-									<h5>ncu<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>npm<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-									</ul>
-								</li>
-								<li class="tsd-parameter">
 									<h5>rails-<wbr>best-<wbr>practices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
@@ -286,22 +292,6 @@
 									</ul>
 								</li>
 								<li class="tsd-parameter">
-									<h5>sass-<wbr>lint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>npm<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-									</ul>
-								</li>
-								<li class="tsd-parameter">
-									<h5>scss-<wbr>lint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>gem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-									</ul>
-								</li>
-								<li class="tsd-parameter">
 									<h5>slim-<wbr>lint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
@@ -319,7 +309,7 @@
 					<div class="tsd-signature tsd-kind-icon">frameworks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L3">src/cli/init/map.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L3">src/cli/init/map.ts:3</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -328,7 +318,7 @@
 						<div class="tsd-signature tsd-kind-icon">bower<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;constable&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L4">src/cli/init/map.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L4">src/cli/init/map.ts:4</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -338,7 +328,7 @@
 						<div class="tsd-signature tsd-kind-icon">brakeman<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;brakeman&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L5">src/cli/init/map.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L5">src/cli/init/map.ts:5</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -348,7 +338,7 @@
 						<div class="tsd-signature tsd-kind-icon">bundler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;bundler-outdated&quot;, &quot;bundler-audit&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L6">src/cli/init/map.ts:6</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L6">src/cli/init/map.ts:6</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -358,27 +348,7 @@
 						<div class="tsd-signature tsd-kind-icon">coffeelint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;coffeelint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L7">src/cli/init/map.ts:7</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="frameworks-1.core-1" class="tsd-anchor"></a>
-						<h3>core</h3>
-						<div class="tsd-signature tsd-kind-icon">core<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;stat&quot; ]</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L8">src/cli/init/map.ts:8</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="frameworks-1.coverage-1" class="tsd-anchor"></a>
-						<h3>coverage</h3>
-						<div class="tsd-signature tsd-kind-icon">coverage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;coverage&quot; ]</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L9">src/cli/init/map.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L7">src/cli/init/map.ts:7</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -388,7 +358,7 @@
 						<div class="tsd-signature tsd-kind-icon">editorconfig<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;eclint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L10">src/cli/init/map.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L8">src/cli/init/map.ts:8</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -398,7 +368,7 @@
 						<div class="tsd-signature tsd-kind-icon">eslint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;eslint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L11">src/cli/init/map.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L9">src/cli/init/map.ts:9</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -408,7 +378,7 @@
 						<div class="tsd-signature tsd-kind-icon">git<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;git&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L12">src/cli/init/map.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L10">src/cli/init/map.ts:10</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -418,17 +388,17 @@
 						<div class="tsd-signature tsd-kind-icon">jshint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;jshint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L13">src/cli/init/map.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L11">src/cli/init/map.ts:11</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 						<a name="frameworks-1.nodejs-1" class="tsd-anchor"></a>
 						<h3>nodejs</h3>
-						<div class="tsd-signature tsd-kind-icon">nodejs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;retire&quot;, &quot;ncu&quot; ]</span></div>
+						<div class="tsd-signature tsd-kind-icon">nodejs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;nsp&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L14">src/cli/init/map.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L12">src/cli/init/map.ts:12</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -438,7 +408,7 @@
 						<div class="tsd-signature tsd-kind-icon">rails<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;brakeman&quot;, &quot;rails-best-practices&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L15">src/cli/init/map.ts:15</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L13">src/cli/init/map.ts:13</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -448,7 +418,7 @@
 						<div class="tsd-signature tsd-kind-icon">retirejs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;retire&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L16">src/cli/init/map.ts:16</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L14">src/cli/init/map.ts:14</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -458,17 +428,17 @@
 						<div class="tsd-signature tsd-kind-icon">rubocop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;rubocop&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L17">src/cli/init/map.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L15">src/cli/init/map.ts:15</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="frameworks-1.sass_lint-2" class="tsd-anchor"></a>
+						<a name="frameworks-1.sass_lint-1" class="tsd-anchor"></a>
 						<h3>sass_<wbr>lint</h3>
 						<div class="tsd-signature tsd-kind-icon">sass_<wbr>lint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;sass-lint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L18">src/cli/init/map.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L16">src/cli/init/map.ts:16</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -478,7 +448,17 @@
 						<div class="tsd-signature tsd-kind-icon">slim_<wbr>lint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;slim-lint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L19">src/cli/init/map.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L17">src/cli/init/map.ts:17</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="frameworks-1.tslint-1" class="tsd-anchor"></a>
+						<h3>tslint</h3>
+						<div class="tsd-signature tsd-kind-icon">tslint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;tslint&quot; ]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L18">src/cli/init/map.ts:18</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -489,56 +469,26 @@
 					<div class="tsd-signature tsd-kind-icon">langs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L22">src/cli/init/map.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L21">src/cli/init/map.ts:21</a></li>
 						</ul>
 					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="langs-1.coffeescript-1" class="tsd-anchor"></a>
-						<h3>coffeescript</h3>
-						<div class="tsd-signature tsd-kind-icon">coffeescript<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;coffeelint&quot; ]</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L23">src/cli/init/map.ts:23</a></li>
-							</ul>
-						</aside>
-					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 						<a name="langs-1.haskell-1" class="tsd-anchor"></a>
 						<h3>haskell</h3>
 						<div class="tsd-signature tsd-kind-icon">haskell<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;hlint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L24">src/cli/init/map.ts:24</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="langs-1.javascript-1" class="tsd-anchor"></a>
-						<h3>javascript</h3>
-						<div class="tsd-signature tsd-kind-icon">javascript<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;escomplex&quot; ]</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L25">src/cli/init/map.ts:25</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="langs-1.php-1" class="tsd-anchor"></a>
-						<h3>php</h3>
-						<div class="tsd-signature tsd-kind-icon">php<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;phpmd&quot; ]</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L26">src/cli/init/map.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L23">src/cli/init/map.ts:23</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 						<a name="langs-1.ruby-1" class="tsd-anchor"></a>
 						<h3>ruby</h3>
-						<div class="tsd-signature tsd-kind-icon">ruby<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;rubocop&quot;, &quot;rubycritic&quot; ]</span></div>
+						<div class="tsd-signature tsd-kind-icon">ruby<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;rubocop&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L27">src/cli/init/map.ts:27</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L25">src/cli/init/map.ts:25</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -548,17 +498,17 @@
 						<div class="tsd-signature tsd-kind-icon">sass<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;sass-lint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L28">src/cli/init/map.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L26">src/cli/init/map.ts:26</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 						<a name="langs-1.scss-1" class="tsd-anchor"></a>
 						<h3>scss</h3>
-						<div class="tsd-signature tsd-kind-icon">scss<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;scss-lint&quot; ]</span></div>
+						<div class="tsd-signature tsd-kind-icon">scss<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;sass-lint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L29">src/cli/init/map.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L27">src/cli/init/map.ts:27</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -568,17 +518,7 @@
 						<div class="tsd-signature tsd-kind-icon">slim<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;slim-lint&quot; ]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L30">src/cli/init/map.ts:30</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="langs-1.typescript-1" class="tsd-anchor"></a>
-						<h3>typescript</h3>
-						<div class="tsd-signature tsd-kind-icon">typescript<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;tslint&quot; ]</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L31">src/cli/init/map.ts:31</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L28">src/cli/init/map.ts:28</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -589,7 +529,7 @@
 					<div class="tsd-signature tsd-kind-icon">peer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L34">src/cli/init/map.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L32">src/cli/init/map.ts:32</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -598,16 +538,16 @@
 						<div class="tsd-signature tsd-kind-icon">brakeman<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L35">src/cli/init/map.ts:35</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L33">src/cli/init/map.ts:33</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.brakeman-3.gem-7" class="tsd-anchor"></a>
+							<a name="peer-1.brakeman-3.gem-6" class="tsd-anchor"></a>
 							<h3>gem</h3>
 							<div class="tsd-signature tsd-kind-icon">gem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;brakeman&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L35">src/cli/init/map.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L33">src/cli/init/map.ts:33</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -618,16 +558,16 @@
 						<div class="tsd-signature tsd-kind-icon">bundler-<wbr>audit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L36">src/cli/init/map.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L34">src/cli/init/map.ts:34</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.bundler_audit-1.gem-8" class="tsd-anchor"></a>
+							<a name="peer-1.bundler_audit-1.gem-7" class="tsd-anchor"></a>
 							<h3>gem</h3>
 							<div class="tsd-signature tsd-kind-icon">gem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[ &quot;bundler&quot;, &quot;bundler-audit&quot; ]</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L36">src/cli/init/map.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L34">src/cli/init/map.ts:34</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -638,16 +578,16 @@
 						<div class="tsd-signature tsd-kind-icon">bundler-<wbr>outdated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L37">src/cli/init/map.ts:37</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L35">src/cli/init/map.ts:35</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.bundler_outdated-1.gem-9" class="tsd-anchor"></a>
+							<a name="peer-1.bundler_outdated-1.gem-8" class="tsd-anchor"></a>
 							<h3>gem</h3>
 							<div class="tsd-signature tsd-kind-icon">gem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;bundler&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L37">src/cli/init/map.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L35">src/cli/init/map.ts:35</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -658,7 +598,7 @@
 						<div class="tsd-signature tsd-kind-icon">hlint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L38">src/cli/init/map.ts:38</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L36">src/cli/init/map.ts:36</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -667,27 +607,7 @@
 							<div class="tsd-signature tsd-kind-icon">cabal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;hlint&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L38">src/cli/init/map.ts:38</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="peer-1.ncu-1" class="tsd-anchor"></a>
-						<h3>ncu</h3>
-						<div class="tsd-signature tsd-kind-icon">ncu<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L39">src/cli/init/map.ts:39</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.ncu-1.npm-3" class="tsd-anchor"></a>
-							<h3>npm</h3>
-							<div class="tsd-signature tsd-kind-icon">npm<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;npm-check-updates&quot;</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L39">src/cli/init/map.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L36">src/cli/init/map.ts:36</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -698,16 +618,16 @@
 						<div class="tsd-signature tsd-kind-icon">rails-<wbr>best-<wbr>practices<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L40">src/cli/init/map.ts:40</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L37">src/cli/init/map.ts:37</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.rails_best_practices-1.gem-10" class="tsd-anchor"></a>
+							<a name="peer-1.rails_best_practices-1.gem-9" class="tsd-anchor"></a>
 							<h3>gem</h3>
 							<div class="tsd-signature tsd-kind-icon">gem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;rails_best_practices&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L40">src/cli/init/map.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L37">src/cli/init/map.ts:37</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -718,16 +638,16 @@
 						<div class="tsd-signature tsd-kind-icon">retire<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L41">src/cli/init/map.ts:41</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L38">src/cli/init/map.ts:38</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.retire-1.npm-4" class="tsd-anchor"></a>
+							<a name="peer-1.retire-1.npm-1" class="tsd-anchor"></a>
 							<h3>npm</h3>
 							<div class="tsd-signature tsd-kind-icon">npm<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;retire&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L41">src/cli/init/map.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L38">src/cli/init/map.ts:38</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -738,56 +658,16 @@
 						<div class="tsd-signature tsd-kind-icon">rubocop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L42">src/cli/init/map.ts:42</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L39">src/cli/init/map.ts:39</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.rubocop-3.gem-11" class="tsd-anchor"></a>
+							<a name="peer-1.rubocop-3.gem-10" class="tsd-anchor"></a>
 							<h3>gem</h3>
 							<div class="tsd-signature tsd-kind-icon">gem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;rubocop&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L42">src/cli/init/map.ts:42</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="peer-1.sass_lint-3" class="tsd-anchor"></a>
-						<h3>sass-<wbr>lint</h3>
-						<div class="tsd-signature tsd-kind-icon">sass-<wbr>lint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L43">src/cli/init/map.ts:43</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.sass_lint-3.npm-5" class="tsd-anchor"></a>
-							<h3>npm</h3>
-							<div class="tsd-signature tsd-kind-icon">npm<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;sass-lint&quot;</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L43">src/cli/init/map.ts:43</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="peer-1.scss_lint-1" class="tsd-anchor"></a>
-						<h3>scss-<wbr>lint</h3>
-						<div class="tsd-signature tsd-kind-icon">scss-<wbr>lint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L44">src/cli/init/map.ts:44</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.scss_lint-1.gem-12" class="tsd-anchor"></a>
-							<h3>gem</h3>
-							<div class="tsd-signature tsd-kind-icon">gem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;scss_lint&quot;</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L44">src/cli/init/map.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L39">src/cli/init/map.ts:39</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -798,16 +678,16 @@
 						<div class="tsd-signature tsd-kind-icon">slim-<wbr>lint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L45">src/cli/init/map.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L40">src/cli/init/map.ts:40</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="peer-1.slim_lint-3.gem-13" class="tsd-anchor"></a>
+							<a name="peer-1.slim_lint-3.gem-11" class="tsd-anchor"></a>
 							<h3>gem</h3>
 							<div class="tsd-signature tsd-kind-icon">gem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;slim_lint&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/cli/init/map.ts#L45">src/cli/init/map.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/cli/init/map.ts#L40">src/cli/init/map.ts:40</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -828,6 +708,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_src_cli_init_map_.html#default_ignore_dirs" class="tsd-kind-icon">DEFAULT_<wbr>IGNORE_<wbr>DIRS</a>
+					</li>
 					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
 						<a href="_src_cli_init_map_.html#plugin_map" class="tsd-kind-icon">PLUGIN_<wbr>MAP</a>
 					</li>

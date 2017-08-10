@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/plugin&quot; | v0.18.3</title>
+	<title>&quot;src/plugin&quot; | v0.19.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -26,7 +26,7 @@
 						<li class="state failure">The search index is not available</li>
 					</ul>
 					<a href="../../../../../.." class="title">
-						v0.18.3
+						v0.19.0
 					</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
@@ -84,7 +84,9 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#bundled_plugins" class="tsd-kind-icon">BUNDLED_<wbr>PLUGINS</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#file_ext" class="tsd-kind-icon">FILE_<wbr>EXT</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#fs_readdir" class="tsd-kind-icon">fs_<wbr>readdir</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#log" class="tsd-kind-icon">log</a></li>
 							</ul>
 						</section>
@@ -93,6 +95,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#add_code_snippets" class="tsd-kind-icon">add_<wbr>code_<wbr>snippets</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#add_ok_issues" class="tsd-kind-icon">add_<wbr>ok_<wbr>issues</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#cannot_find_module" class="tsd-kind-icon">cannot_<wbr>find_<wbr>module</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#check_for_uninstalled_plugins" class="tsd-kind-icon">check_<wbr>for_<wbr>uninstalled_<wbr>plugins</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#combine_paths" class="tsd-kind-icon">combine_<wbr>paths</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#cwd_plugins_path" class="tsd-kind-icon">cwd_<wbr>plugins_<wbr>path</a></li>
@@ -100,6 +103,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#exec_in_fork" class="tsd-kind-icon">exec_<wbr>in_<wbr>fork</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#exec_plugin" class="tsd-kind-icon">exec_<wbr>plugin</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#execute_plugins" class="tsd-kind-icon">execute_<wbr>plugins</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#filter_plugins_to_run" class="tsd-kind-icon">filter_<wbr>plugins_<wbr>to_<wbr>run</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#into_snippet" class="tsd-kind-icon">into_<wbr>snippet</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#is_array" class="tsd-kind-icon">is_<wbr>array</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#is_plugin" class="tsd-kind-icon">is_<wbr>plugin</a></li>
@@ -111,20 +115,67 @@
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_plugin_.html#valid_plugin" class="tsd-kind-icon">valid_<wbr>plugin</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-external-module"><a href="_src_plugin_.html#module_exports" class="tsd-kind-icon">module_<wbr>exports</a></li>
+							</ul>
+						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="bundled_plugins" class="tsd-anchor"></a>
+					<h3>BUNDLED_<wbr>PLUGINS</h3>
+					<div class="tsd-signature tsd-kind-icon">BUNDLED_<wbr>PLUGINS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;vile-comment&quot;,&quot;vile-coverage&quot;,&quot;vile-ncu&quot;,&quot;vile-stat&quot;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L21">src/plugin.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="file_ext" class="tsd-anchor"></a>
 					<h3>FILE_<wbr>EXT</h3>
 					<div class="tsd-signature tsd-kind-icon">FILE_<wbr>EXT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> =&nbsp;/\.[^\.]*$/</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L19">src/plugin.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L18">src/plugin.ts:18</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="fs_readdir" class="tsd-anchor"></a>
+					<h3>fs_<wbr>readdir</h3>
+					<div class="tsd-signature tsd-kind-icon">fs_<wbr>readdir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;Bluebird.promisify(fs.readdir)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L14">src/plugin.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_node_modules__types_bluebird_index_d_.bluebird.html" class="tsd-signature-type">Bluebird</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>arg1: <span class="tsd-signature-type">A1</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="../classes/_node_modules__types_bluebird_index_d_.bluebird.html" class="tsd-signature-type">Bluebird</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="log" class="tsd-anchor"></a>
@@ -132,7 +183,7 @@
 					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src__types_index_d_.vile.loggerinstance.html" class="tsd-signature-type">LoggerInstance</a><span class="tsd-signature-symbol"> =&nbsp;logger.create(&quot;plugin&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L17">src/plugin.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L16">src/plugin.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -149,7 +200,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L296">src/plugin.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L312">src/plugin.ts:312</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -166,28 +217,51 @@
 					<a name="add_ok_issues" class="tsd-anchor"></a>
 					<h3>add_<wbr>ok_<wbr>issues</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">add_<wbr>ok_<wbr>issues<span class="tsd-signature-symbol">(</span>vile_allow<span class="tsd-signature-symbol">?: </span><a href="_src__types_index_d_.vile.html#allowlist" class="tsd-signature-type">AllowList</a>, vile_ignore<span class="tsd-signature-symbol">?: </span><a href="_src__types_index_d_.vile.html#ignorelist" class="tsd-signature-type">IgnoreList</a>, issues<span class="tsd-signature-symbol">?: </span><a href="_src__types_index_d_.vile.html#issuelist" class="tsd-signature-type">IssueList</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_node_modules__types_bluebird_index_d_.bluebird.html" class="tsd-signature-type">Bluebird</a><span class="tsd-signature-symbol">&lt;</span><a href="_src__types_index_d_.vile.html#issuelist" class="tsd-signature-type">IssueList</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">add_<wbr>ok_<wbr>issues<span class="tsd-signature-symbol">(</span>vile_allow<span class="tsd-signature-symbol">: </span><a href="_src__types_index_d_.vile.html#allowlist" class="tsd-signature-type">AllowList</a>, vile_ignore<span class="tsd-signature-symbol">: </span><a href="_src__types_index_d_.vile.html#ignorelist" class="tsd-signature-type">IgnoreList</a>, issues<span class="tsd-signature-symbol">?: </span><a href="_src__types_index_d_.vile.html#issuelist" class="tsd-signature-type">IssueList</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_node_modules__types_bluebird_index_d_.bluebird.html" class="tsd-signature-type">Bluebird</a><span class="tsd-signature-symbol">&lt;</span><a href="_src__types_index_d_.vile.html#issuelist" class="tsd-signature-type">IssueList</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L348">src/plugin.ts:348</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L364">src/plugin.ts:364</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> vile_allow: <a href="_src__types_index_d_.vile.html#allowlist" class="tsd-signature-type">AllowList</a><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
+									<h5>vile_allow: <a href="_src__types_index_d_.vile.html#allowlist" class="tsd-signature-type">AllowList</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> vile_ignore: <a href="_src__types_index_d_.vile.html#ignorelist" class="tsd-signature-type">IgnoreList</a><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
+									<h5>vile_ignore: <a href="_src__types_index_d_.vile.html#ignorelist" class="tsd-signature-type">IgnoreList</a></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> issues: <a href="_src__types_index_d_.vile.html#issuelist" class="tsd-signature-type">IssueList</a><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../classes/_node_modules__types_bluebird_index_d_.bluebird.html" class="tsd-signature-type">Bluebird</a><span class="tsd-signature-symbol">&lt;</span><a href="_src__types_index_d_.vile.html#issuelist" class="tsd-signature-type">IssueList</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="cannot_find_module" class="tsd-anchor"></a>
+					<h3>cannot_<wbr>find_<wbr>module</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">cannot_<wbr>find_<wbr>module<span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><a href="../interfaces/_node_modules__types_node_index_d_.nodejs.errnoexception.html" class="tsd-signature-type">ErrnoException</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L164">src/plugin.ts:164</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>err: <a href="../interfaces/_node_modules__types_node_index_d_.nodejs.errnoexception.html" class="tsd-signature-type">ErrnoException</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -201,7 +275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L92">src/plugin.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L94">src/plugin.ts:94</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -227,7 +301,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L106">src/plugin.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L108">src/plugin.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -253,7 +327,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L345">src/plugin.ts:345</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L361">src/plugin.ts:361</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -270,7 +344,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L372">src/plugin.ts:372</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L410">src/plugin.ts:410</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -296,7 +370,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L44">src/plugin.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L46">src/plugin.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -325,7 +399,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L162">src/plugin.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L195">src/plugin.ts:195</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -345,19 +419,19 @@
 					<a name="execute_plugins" class="tsd-anchor"></a>
 					<h3>execute_<wbr>plugins</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">execute_<wbr>plugins<span class="tsd-signature-symbol">(</span>allowed<span class="tsd-signature-symbol">?: </span><a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a>, config<span class="tsd-signature-symbol">?: </span><a href="_src__types_index_d_.vile.html#ymlconfig" class="tsd-signature-type">YMLConfig</a>, opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_src__types_index_d_.vile.pluginexecoptions.html" class="tsd-signature-type">PluginExecOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+						<li class="tsd-signature tsd-kind-icon">execute_<wbr>plugins<span class="tsd-signature-symbol">(</span>plugins<span class="tsd-signature-symbol">?: </span><a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a>, config<span class="tsd-signature-symbol">?: </span><a href="_src__types_index_d_.vile.html#ymlconfig" class="tsd-signature-type">YMLConfig</a>, opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_src__types_index_d_.vile.pluginexecoptions.html" class="tsd-signature-type">PluginExecOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_node_modules__types_bluebird_index_d_.bluebird.html" class="tsd-signature-type">Bluebird</a><span class="tsd-signature-symbol">&lt;</span><a href="_src__types_index_d_.vile.html#issuelist" class="tsd-signature-type">IssueList</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L192">src/plugin.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L225">src/plugin.ts:225</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> allowed: <a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> plugins: <a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> config: <a href="_src__types_index_d_.vile.html#ymlconfig" class="tsd-signature-type">YMLConfig</a><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
@@ -366,7 +440,39 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <a href="../interfaces/_src__types_index_d_.vile.pluginexecoptions.html" class="tsd-signature-type">PluginExecOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/_node_modules__types_bluebird_index_d_.bluebird.html" class="tsd-signature-type">Bluebird</a><span class="tsd-signature-symbol">&lt;</span><a href="_src__types_index_d_.vile.html#issuelist" class="tsd-signature-type">IssueList</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="filter_plugins_to_run" class="tsd-anchor"></a>
+					<h3>filter_<wbr>plugins_<wbr>to_<wbr>run</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">filter_<wbr>plugins_<wbr>to_<wbr>run<span class="tsd-signature-symbol">(</span>peer_installed<span class="tsd-signature-symbol">: </span><a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a>, via_config<span class="tsd-signature-symbol">: </span><a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a>, via_opts<span class="tsd-signature-symbol">: </span><a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a>, skip_core_plugins<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L388">src/plugin.ts:388</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>peer_installed: <a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a></h5>
+								</li>
+								<li>
+									<h5>via_config: <a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a></h5>
+								</li>
+								<li>
+									<h5>via_opts: <a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a></h5>
+								</li>
+								<li>
+									<h5>skip_core_plugins: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_src__types_index_d_.vile.html#pluginlist" class="tsd-signature-type">PluginList</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -380,7 +486,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L284">src/plugin.ts:284</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L300">src/plugin.ts:300</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -409,7 +515,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L27">src/plugin.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L34">src/plugin.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -432,7 +538,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L21">src/plugin.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L28">src/plugin.ts:28</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -455,7 +561,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L30">src/plugin.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L37">src/plugin.ts:37</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -478,7 +584,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L38">src/plugin.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L40">src/plugin.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -501,7 +607,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L74">src/plugin.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L76">src/plugin.ts:76</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -524,7 +630,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L72">src/plugin.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L74">src/plugin.ts:74</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -541,7 +647,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L33">src/plugin.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L170">src/plugin.ts:170</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -564,7 +670,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/forthright/vile/blob/4f305b2/src/plugin.ts#L24">src/plugin.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L31">src/plugin.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -576,6 +682,39 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
+					<a name="module_exports" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagExport assignment">Export assignment</span> module_<wbr>exports</h3>
+					<div class="tsd-signature tsd-kind-icon">module_<wbr>exports<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L441">src/plugin.ts:441</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="module_exports.exec-1" class="tsd-anchor"></a>
+						<h3>exec</h3>
+						<div class="tsd-signature tsd-kind-icon">exec<span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">exec</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L442">src/plugin.ts:442</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="module_exports.exec_plugin-1" class="tsd-anchor"></a>
+						<h3>exec_<wbr>plugin</h3>
+						<div class="tsd-signature tsd-kind-icon">exec_<wbr>plugin<span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">exec_plugin</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/forthright/vile/blob/3357ad0/src/plugin.ts#L443">src/plugin.ts:443</a></li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -593,7 +732,13 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_src_plugin_.html#bundled_plugins" class="tsd-kind-icon">BUNDLED_<wbr>PLUGINS</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_plugin_.html#file_ext" class="tsd-kind-icon">FILE_<wbr>EXT</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_src_plugin_.html#fs_readdir" class="tsd-kind-icon">fs_<wbr>readdir</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_plugin_.html#log" class="tsd-kind-icon">log</a>
@@ -603,6 +748,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_plugin_.html#add_ok_issues" class="tsd-kind-icon">add_<wbr>ok_<wbr>issues</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_src_plugin_.html#cannot_find_module" class="tsd-kind-icon">cannot_<wbr>find_<wbr>module</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_plugin_.html#check_for_uninstalled_plugins" class="tsd-kind-icon">check_<wbr>for_<wbr>uninstalled_<wbr>plugins</a>
@@ -624,6 +772,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_plugin_.html#execute_plugins" class="tsd-kind-icon">execute_<wbr>plugins</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_src_plugin_.html#filter_plugins_to_run" class="tsd-kind-icon">filter_<wbr>plugins_<wbr>to_<wbr>run</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_plugin_.html#into_snippet" class="tsd-kind-icon">into_<wbr>snippet</a>
@@ -651,6 +802,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_plugin_.html#valid_plugin" class="tsd-kind-icon">valid_<wbr>plugin</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
+						<a href="_src_plugin_.html#module_exports" class="tsd-kind-icon">module_<wbr>exports</a>
 					</li>
 				</ul>
 			</nav>
