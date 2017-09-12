@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>v0.19.1</title>
+	<title>v0.19.2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -26,7 +26,7 @@
 						<li class="state failure">The search index is not available</li>
 					</ul>
 					<a href="../../../../.." class="title">
-						v0.19.1
+						v0.19.2
 					</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
@@ -67,7 +67,7 @@
 				<!--<a href="globals.html">Modules</a>-->
 				<!--</li>-->
 			</ul>
-			<!--<h1>--><!-- --><!--v0.19.1--><!----><!--</h1>-->
+			<!--<h1>--><!-- --><!--v0.19.2--><!----><!--</h1>-->
 		</div>
 	</div>
 </header>
@@ -76,14 +76,45 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<p><img src="https://cloud.githubusercontent.com/assets/93340/23980691/aba34a1a-09d7-11e7-85b2-12d1403b5686.png" alt="vile_full"></p>
-				<p>A punishing yet easy to use tool for writing insightful code.</p>
+				<h2 id="table-of-contents">Table of Contents</h2>
+				<ol>
+					<li><a href="#requirements">Requirements</a></li>
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#setup">Setup</a></li>
+					<li><a href="#analyzing-your-project">Analyzing Your Project</a></li>
+					<li><a href="#language-support">Language Support</a><ul>
+							<li><a href="#javascript">JavaScript</a></li>
+							<li><a href="#flow">Flow</a></li>
+							<li><a href="#jsx">JSX</a></li>
+							<li><a href="#non-standard-js">Non-Standard JS</a></li>
+							<li><a href="#ruby">Ruby</a></li>
+							<li><a href="#rails">Rails</a></li>
+							<li><a href="#haskell">Haskell</a></li>
+						</ul>
+					</li>
+					<li><a href="#setting-up-continuous-analysis">Setting Up Continuous Analysis</a><ul>
+							<li><a href="#circleci">CircleCI</a></li>
+							<li><a href="#appveyor">AppVeyor</a></li>
+							<li><a href="#travisci">TravisCI</a></li>
+							<li><a href="#codeship">Codeship</a></li>
+						</ul>
+					</li>
+					<li><a href="#configuration">Configuration</a></li>
+					<li><a href="#getting-new-releases">Getting New Releases</a></li>
+					<li><a href="#editor-integration">Editor Integration</a><ul>
+							<li><a href="#vim">Vim</a></li>
+						</ul>
+					</li>
+					<li><a href="#library-integration">Library Integration</a></li>
+					<li><a href="#creating-a-plugin">Creating a Plugin</a></li>
+				</ol>
 				<h2 id="requirements">Requirements</h2>
 				<ul>
 					<li><a href="http://nodejs.org">Node.js</a></li>
 				</ul>
 				<h2 id="installation">Installation</h2>
 				<pre><code>npm <span class="hljs-selector-tag">i</span> -g vile
-</code></pre><h2 id="configuration">Configuration</h2>
+</code></pre><h2 id="setup">Setup</h2>
 				<pre><code><span class="hljs-built_in">cd</span> my_project_src/
 vile init
 </code></pre><p>Note: If you don&#39;t like installing vile&#39;s CLI globally, you can easily
@@ -103,6 +134,59 @@ vile init
 <span class="hljs-built_in">export</span> VILE_PROJECT=my-project-name
 
 vile analyze -u
+</code></pre>
+				<h2 id="language-support">Language Support</h2>
+				<p>The core <code>vile</code> package comes with a general set of plugins that support basic multi language analysis.</p>
+				<p>To analyze your code further, such as tracking outdated RubyGems, plugging in
+					your favourite linter, tracking code complexity, or checking for vulnerabilities,
+				you need to install extra <a href="https://vile.io/plugins">plugins</a> first.</p>
+				<p>See also below for tips and known caveats for various languages and frameworks.</p>
+				<h3 id="javascript">JavaScript</h3>
+				<p>For an everyday JavaScript (or Node.js) project:</p>
+				<pre><code>npm <span class="hljs-selector-tag">i</span> -D vile vile-synt vile-git vile-escomplex vile-nsp
+</code></pre><h3 id="flow">Flow</h3>
+				<p>There is currently limited support for Flow using non-core plugins.
+				Some plugins may work, and others (that specifically parse JS) may fail.</p>
+				<p>For example <a href="https://github.com/forthright/vile-synt">vile-synt</a> currently does not work (<a href="https://github.com/brentlintner/synt/issues/99">yet</a>).</p>
+				<h3 id="jsx">JSX</h3>
+				<p>Just like Flow there is limited support.</p>
+				<p>A good workaround is to ignore all <code>.jsx</code> files
+				and also any <code>.js</code> files with JSX code in them.</p>
+				<p>For example, with a plugin like <a href="https://github.com/forthright/vile-escomplex">vile-escomplex</a>:</p>
+				<pre><code class="lang-yaml"><span class="hljs-attr">escomplex:</span>
+<span class="hljs-attr">  ignore:</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">"*.jsx"</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">path/to/jsx</span>
+</code></pre>
+				<h3 id="non-standard-js">Non-Standard JS</h3>
+				<p>If you are using EMCAScript Stage-3 and below proposals,
+				some plugins might not work out of the box or just yet.</p>
+				<p>A good workaround is to map <code>lib</code> data to <code>src</code> using the CLI&#39;s
+				<code>-x src:lib</code> option, while also ignoring <code>src</code> for the specific plugins:</p>
+				<pre><code class="lang-yaml"><span class="hljs-attr">synt:</span>
+<span class="hljs-attr">  ignore:</span> <span class="hljs-string">src</span>
+<span class="hljs-attr">escomplex:</span>
+<span class="hljs-attr">  ignore:</span> <span class="hljs-string">src</span>
+</code></pre>
+				<h3 id="ruby">Ruby</h3>
+				<p>A basic Ruby project example (using <a href="http://bundler.io">Bundler</a>):</p>
+				<pre><code class="lang-sh">npm i -D vile vile-git vile-rubycritic vile-rubocop vile-sass-lint vile-bundler-audit vile-bundler-outdated
+
+<span class="hljs-comment"># you can also add these to your Gemfile</span>
+gem install rubocop rubycritic bundler bundler-audit
+
+<span class="hljs-comment"># depending on your setup, you may need to use `bundle exec`</span>
+bundle <span class="hljs-built_in">exec</span> vile analyze
+</code></pre>
+				<p>Note: Some plugins don&#39;t support Vile&#39;s allow/ignore out of the box.</p>
+				<p>For example, <a href="https://github.com/forthright/vile-rubycritic">vile-rubycritic</a> requires
+				you set specific <code>allow</code> paths to avoid traversing <code>node_modules</code>.</p>
+				<p>The same goes for <a href="https://github.com/forthright/vile-rubocop#ignoring-files">vile-rubocop</a>.</p>
+				<h3 id="rails">Rails</h3>
+				<p>For an in depth article about using Rails + Vile checkout <a href="https://medium.com/forthright/continuous-analysis-for-your-rails-project-using-vile-and-circleci-4fb077378ab6">Continuous Analysis For Your Rails Project Using Vile and CircleCI</a>.</p>
+				<h3 id="haskell">Haskell</h3>
+				<p>Depending on your setup and if you are using sandboxes, you may need to use <code>cabal exec</code>:</p>
+				<pre><code class="lang-sh">cabal <span class="hljs-built_in">exec</span> -- vile analyze
 </code></pre>
 				<h2 id="setting-up-continuous-analysis">Setting Up Continuous Analysis</h2>
 				<p>Vile is most helpful when you integrate it into your CI/CD process
@@ -188,61 +272,7 @@ vile analyze -u
 				<p>If you run into issues reporting <code>churn</code> or generating <code>git</code> data, you may need to do this
 				prior to analyzing:</p>
 				<pre><code><span class="hljs-attribute">git</span> checkout -f <span class="hljs-variable">$CI_BRANCH</span>
-</code></pre><h2 id="language-support">Language Support</h2>
-				<p>Vile itself comes with a general set of plugins that support basic multi language analysis.</p>
-				<p>To analyze your code further, such as tracking outdated RubyGems, plugging in
-					your favourite linter, tracking code complexity, or checking for vulnerabilities,
-				you need to install extra plugins first.</p>
-				<p>While there is a full list of plugins available <a href="https://vile.io/plugins">here</a>, please
-				see below for tips and known caveats for various languages and frameworks.</p>
-				<h3 id="javascript">JavaScript</h3>
-				<p>For an everyday JavaScript (or Node.js) project:</p>
-				<pre><code>npm <span class="hljs-selector-tag">i</span> -D vile vile-synt vile-git vile-escomplex vile-nsp
-</code></pre><h3 id="flow">Flow</h3>
-				<p>There is currently limited support for Flow using non-core plugins.
-				Some plugins may work, and others (that specifically parse JS) may fail.</p>
-				<p>For example <a href="https://github.com/forthright/vile-synt">vile-synt</a> currently does not work (<a href="https://github.com/brentlintner/synt/issues/99">yet</a>).</p>
-				<h3 id="jsx">JSX</h3>
-				<p>Just like Flow there is limited support.</p>
-				<p>A good workaround is to ignore all <code>.jsx</code> files
-				and also any <code>.js</code> files with JSX code in them.</p>
-				<p>For example, with a plugin like <a href="https://github.com/forthright/vile-escomplex">vile-escomplex</a>:</p>
-				<pre><code class="lang-yaml"><span class="hljs-attr">escomplex:</span>
-<span class="hljs-attr">  ignore:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">"*.jsx"</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">path/to/jsx</span>
-</code></pre>
-				<h3 id="non-standard-js">Non-Standard JS</h3>
-				<p>If you are using EMCAScript Stage-3 and below proposals,
-				some plugins might not work out of the box or just yet.</p>
-				<p>A good workaround is to map <code>lib</code> data to <code>src</code> using the CLI&#39;s
-				<code>-x src:lib</code> option, while also ignoring <code>src</code> for the specific plugins:</p>
-				<pre><code class="lang-yaml"><span class="hljs-attr">synt:</span>
-<span class="hljs-attr">  ignore:</span> <span class="hljs-string">src</span>
-<span class="hljs-attr">escomplex:</span>
-<span class="hljs-attr">  ignore:</span> <span class="hljs-string">src</span>
-</code></pre>
-				<h3 id="ruby">Ruby</h3>
-				<p>A basic Ruby project example (using <a href="http://bundler.io">Bundler</a>):</p>
-				<pre><code class="lang-sh">npm i -D vile vile-git vile-rubycritic vile-rubocop vile-sass-lint vile-bundler-audit vile-bundler-outdated
-
-<span class="hljs-comment"># you can also add these to your Gemfile</span>
-gem install rubocop rubycritic bundler bundler-audit
-
-<span class="hljs-comment"># depending on your setup, you may need to use `bundle exec`</span>
-bundle <span class="hljs-built_in">exec</span> vile analyze
-</code></pre>
-				<p>Note: Some plugins don&#39;t support Vile&#39;s allow/ignore out of the box.</p>
-				<p>For example, <a href="https://github.com/forthright/vile-rubycritic">vile-rubycritic</a> requires
-				you set specific <code>allow</code> paths to avoid traversing <code>node_modules</code>.</p>
-				<p>The same goes for <a href="https://github.com/forthright/vile-rubocop#ignoring-files">vile-rubocop</a>.</p>
-				<h3 id="rails">Rails</h3>
-				<p>For an in depth article about using Rails + Vile checkout <a href="https://medium.com/forthright/continuous-analysis-for-your-rails-project-using-vile-and-circleci-4fb077378ab6">Continuous Analysis For Your Rails Project Using Vile and CircleCI</a>.</p>
-				<h3 id="haskell">Haskell</h3>
-				<p>Depending on your setup and if you are using sandboxes, you may need to use <code>cabal exec</code>:</p>
-				<pre><code class="lang-sh">cabal <span class="hljs-built_in">exec</span> -- vile analyze
-</code></pre>
-				<h2 id="config">Config</h2>
+</code></pre><h2 id="configuration">Configuration</h2>
 				<p>You can easily configure Vile and it&#39;s plugins via a <code>.vile.yml</code> file.</p>
 				<p>The file should reside in your project root and look something like this:</p>
 				<pre><code class="lang-yaml"><span class="hljs-attr">vile:</span>
@@ -520,6 +550,9 @@ vile
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_node_index_d_.html">"node_<wbr>modules/@types/node/index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_node_inspector_d_.html">"node_<wbr>modules/@types/node/inspector.d"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="modules/_node_modules__types_opn_index_d_.html">"node_<wbr>modules/@types/opn/index.d"</a>
